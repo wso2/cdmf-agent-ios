@@ -49,7 +49,7 @@
 			containerPortal = 74F144C31801B54600FBC10B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 74F144CA1801B54600FBC10B;
-			remoteInfo = "MDM Agent";
+			remoteInfo = "WSO2 Agent";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -232,7 +232,7 @@
 				74F144D51801B54600FBC10B /* Supporting Files */,
 			);
 			name = "WSO2 Agent";
-			path = "MDM Agent";
+			path = "WSO2 Agent";
 			sourceTree = "<group>";
 		};
 		74F144D51801B54600FBC10B /* Supporting Files */ = {
@@ -258,7 +258,7 @@
 				74F144F31801B54700FBC10B /* Supporting Files */,
 			);
 			name = "WSO2 AgentTests";
-			path = "MDM AgentTests";
+			path = "WSO2 AgentTests";
 			sourceTree = "<group>";
 		};
 		74F144F31801B54700FBC10B /* Supporting Files */ = {
@@ -286,7 +286,7 @@
 			dependencies = (
 			);
 			name = agent;
-			productName = "MDM Agent";
+			productName = "WSO2 Agent";
 			productReference = 74F144CB1801B54600FBC10B /* agent.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -305,7 +305,7 @@
 				74F144F11801B54700FBC10B /* PBXTargetDependency */,
 			);
 			name = agentTests;
-			productName = "MDM AgentTests";
+			productName = "WSO2 AgentTests";
 			productReference = 74F144EB1801B54700FBC10B /* agentTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -468,8 +468,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,8 +496,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -510,14 +510,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WSO2 Agent/agent-Prefix.pch";
-				INFOPLIST_FILE = "MDM Agent/agent-Info.plist";
+				INFOPLIST_FILE = "WSO2 Agent/agent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MDM Agent\"",
+					"\"$(SRCROOT)/WSO2 Agent\"",
 				);
 				PRODUCT_NAME = agent;
-				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,14 +528,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WSO2 Agent/agent-Prefix.pch";
-				INFOPLIST_FILE = "MDM Agent/agent-Info.plist";
+				INFOPLIST_FILE = "WSO2 Agent/agent-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MDM Agent\"",
+					"\"$(SRCROOT)/WSO2 Agent\"",
 				);
 				PRODUCT_NAME = agent;
-				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -549,8 +549,8 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MDM Agent/MDM Agent-Prefix.pch";
-				INFOPLIST_FILE = "MDM AgentTests/agentTests-Info.plist";
+				GCC_PREFIX_HEADER = "WSO2 Agent/WSO2 Agent-Prefix.pch";
+				INFOPLIST_FILE = "WSO2 AgentTests/agentTests-Info.plist";
 				PRODUCT_NAME = agentTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -566,8 +566,8 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MDM Agent/MDM Agent-Prefix.pch";
-				INFOPLIST_FILE = "MDM AgentTests/agentTests-Info.plist";
+				GCC_PREFIX_HEADER = "WSO2 Agent/WSO2 Agent-Prefix.pch";
+				INFOPLIST_FILE = "WSO2 AgentTests/agentTests-Info.plist";
 				PRODUCT_NAME = agentTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

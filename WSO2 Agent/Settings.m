@@ -152,7 +152,8 @@
     if (success) return;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:RESOURCE_PLIST ofType:@"plist"];
-    success = [fileManager copyItemAtPath:path toPath:filePath error:&error];
+    //success = [fileManager copyItemAtPath:path toPath:filePath error:&error];
+    [fileManager copyItemAtPath:path toPath:filePath error:&error];
 }
 
 + (NSString *) getResourcePlist: (NSString *) objectKey {

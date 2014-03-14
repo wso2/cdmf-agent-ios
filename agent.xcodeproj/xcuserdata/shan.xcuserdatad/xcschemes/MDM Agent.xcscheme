@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "74F144CA1801B54600FBC10B"
-               BuildableName = "mobile.app"
+               BuildableName = "agent.app"
                BlueprintName = "agent"
                ReferencedContainer = "container:agent.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "74F144EA1801B54700FBC10B"
-               BuildableName = "mobileTests.octest"
+               BuildableName = "agentTests.octest"
                BlueprintName = "agentTests"
                ReferencedContainer = "container:agent.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74F144CA1801B54600FBC10B"
-            BuildableName = "mobile.app"
+            BuildableName = "agent.app"
             BlueprintName = "agent"
             ReferencedContainer = "container:agent.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74F144CA1801B54600FBC10B"
-            BuildableName = "mobile.app"
+            BuildableName = "agent.app"
             BlueprintName = "agent"
             ReferencedContainer = "container:agent.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74F144CA1801B54600FBC10B"
-            BuildableName = "mobile.app"
+            BuildableName = "agent.app"
             BlueprintName = "agent"
             ReferencedContainer = "container:agent.xcodeproj">
          </BuildableReference>
