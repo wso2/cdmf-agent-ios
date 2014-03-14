@@ -74,7 +74,7 @@
 		7494A6A41803C5D700B1224A /* RegisterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDelegate.h; sourceTree = "<group>"; };
 		749A066718055A3D00DF8C27 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../app_icon.png; sourceTree = "<group>"; };
 		749A066918055A4100DF8C27 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../app_icon@2x.png"; sourceTree = "<group>"; };
-		74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		74DB4A7D1851EB8200F8F820 /* PushDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushDelegate.h; sourceTree = "<group>"; };
 		74E94120180256CF00F03D02 /* ResponseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseDelegate.h; sourceTree = "<group>"; };
 		74EA6F1718031F5600249B58 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 		74F144C21801B54600FBC10B = {
 			isa = PBXGroup;
 			children = (
-				74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */,
 				74F144D41801B54600FBC10B /* WSO2 Agent */,
 				74F144F21801B54700FBC10B /* WSO2 AgentTests */,
 				74F144CD1801B54600FBC10B /* Frameworks */,
@@ -239,6 +238,7 @@
 		74F144D51801B54600FBC10B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */,
 				74F144D61801B54600FBC10B /* agent-Info.plist */,
 				74F144D71801B54600FBC10B /* InfoPlist.strings */,
 				74F144DA1801B54600FBC10B /* main.m */,
