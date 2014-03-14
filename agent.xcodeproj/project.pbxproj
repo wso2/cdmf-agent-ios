@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14C73B8F18758D640078F193 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C73B8E18758D640078F193 /* CoreLocation.framework */; };
+		14C73B91187599490078F193 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C73B90187599490078F193 /* MediaPlayer.framework */; };
+		74145034182A69870046BAFF /* ApiResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 74145033182A69870046BAFF /* ApiResponse.m */; };
+		74145038182A6B280046BAFF /* ResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 74145037182A6B280046BAFF /* ResponseBuilder.m */; };
+		7435FEAA1802E17300317D52 /* Endpoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7435FEA91802E17300317D52 /* Endpoints.plist */; };
+		7493CE1F182A8D4700600F36 /* ResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7493CE1E182A8D4700600F36 /* ResponseObject.m */; };
+		7493CE22182A9E8A00600F36 /* ic_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7493CE21182A9E8A00600F36 /* ic_logo.png */; };
+		7494A69C1803AE0400B1224A /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494A69B1803AE0400B1224A /* Settings.m */; };
+		7494A6A01803BE9200B1224A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494A69E1803BE9100B1224A /* WebViewController.m */; };
+		7494A6A11803BE9200B1224A /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7494A69F1803BE9100B1224A /* WebViewController.xib */; };
+		7494A6A31803BFB400B1224A /* WebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7494A6A21803BFB400B1224A /* WebViewController_iPad.xib */; };
+		749A066818055A3E00DF8C27 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 749A066718055A3D00DF8C27 /* app_icon.png */; };
+		749A066A18055A4100DF8C27 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 749A066918055A4100DF8C27 /* app_icon@2x.png */; };
+		74D9561618A0A1A80088FDC4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */; };
+		74E941281802698100F03D02 /* Resource.plist in Sources */ = {isa = PBXBuildFile; fileRef = 74ECDA1C1801C018005B001B /* Resource.plist */; };
+		74EA6F1918031F5700249B58 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6F1818031F5600249B58 /* ActivityView.m */; };
+		74ECDA1D1801C018005B001B /* Resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74ECDA1C1801C018005B001B /* Resource.plist */; };
+		74ECDA281801C705005B001B /* UnregisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ECDA261801C704005B001B /* UnregisterViewController.m */; };
+		74ECDA291801C705005B001B /* UnregisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74ECDA271801C705005B001B /* UnregisterViewController.xib */; };
+		74ECDA2B1801C71E005B001B /* UnregisterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74ECDA2A1801C71E005B001B /* UnregisterViewController_iPad.xib */; };
+		74F144CF1801B54600FBC10B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144CE1801B54600FBC10B /* UIKit.framework */; };
+		74F144D11801B54600FBC10B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144D01801B54600FBC10B /* Foundation.framework */; };
+		74F144D31801B54600FBC10B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144D21801B54600FBC10B /* CoreGraphics.framework */; };
+		74F144D91801B54600FBC10B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74F144D71801B54600FBC10B /* InfoPlist.strings */; };
+		74F144DB1801B54600FBC10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F144DA1801B54600FBC10B /* main.m */; };
+		74F144DF1801B54600FBC10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F144DE1801B54600FBC10B /* AppDelegate.m */; };
+		74F144ED1801B54700FBC10B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144EC1801B54700FBC10B /* SenTestingKit.framework */; };
+		74F144EE1801B54700FBC10B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144CE1801B54600FBC10B /* UIKit.framework */; };
+		74F144EF1801B54700FBC10B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144D01801B54600FBC10B /* Foundation.framework */; };
+		74F144F71801B54700FBC10B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74F144F51801B54700FBC10B /* InfoPlist.strings */; };
+		74F144FA1801B54700FBC10B /* WSO2_AgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F144F91801B54700FBC10B /* WSO2_AgentTests.m */; };
+		74F145061801B56500FBC10B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F145041801B56500FBC10B /* WelcomeViewController.m */; };
+		74F145071801B56500FBC10B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F145051801B56500FBC10B /* WelcomeViewController.xib */; };
+		74F145091801B57700FBC10B /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F145081801B57700FBC10B /* WelcomeViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74F144F01801B54700FBC10B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74F144C31801B54600FBC10B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74F144CA1801B54600FBC10B;
+			remoteInfo = "MDM Agent";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14C73B8E18758D640078F193 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		14C73B90187599490078F193 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		74145032182A69870046BAFF /* ApiResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiResponse.h; sourceTree = "<group>"; };
+		74145033182A69870046BAFF /* ApiResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiResponse.m; sourceTree = "<group>"; };
+		74145036182A6B280046BAFF /* ResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseBuilder.h; sourceTree = "<group>"; };
+		74145037182A6B280046BAFF /* ResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseBuilder.m; sourceTree = "<group>"; };
+		7435FEA91802E17300317D52 /* Endpoints.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Endpoints.plist; sourceTree = "<group>"; };
+		7493CE1D182A8D4700600F36 /* ResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseObject.h; sourceTree = "<group>"; };
+		7493CE1E182A8D4700600F36 /* ResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseObject.m; sourceTree = "<group>"; };
+		7493CE21182A9E8A00600F36 /* ic_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_logo.png; sourceTree = "<group>"; };
+		7494A6961803AAB800B1224A /* UnregisterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnregisterDelegate.h; sourceTree = "<group>"; };
+		7494A69A1803AE0300B1224A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		7494A69B1803AE0400B1224A /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		7494A69D1803BE9000B1224A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		7494A69E1803BE9100B1224A /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		7494A69F1803BE9100B1224A /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		7494A6A21803BFB400B1224A /* WebViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebViewController_iPad.xib; path = ../WebViewController_iPad.xib; sourceTree = "<group>"; };
+		7494A6A41803C5D700B1224A /* RegisterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDelegate.h; sourceTree = "<group>"; };
+		749A066718055A3D00DF8C27 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../app_icon.png; sourceTree = "<group>"; };
+		749A066918055A4100DF8C27 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../app_icon@2x.png"; sourceTree = "<group>"; };
+		74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		74DB4A7D1851EB8200F8F820 /* PushDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushDelegate.h; sourceTree = "<group>"; };
+		74E94120180256CF00F03D02 /* ResponseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseDelegate.h; sourceTree = "<group>"; };
+		74EA6F1718031F5600249B58 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		74EA6F1818031F5600249B58 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
+		74ECDA1C1801C018005B001B /* Resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resource.plist; sourceTree = "<group>"; };
+		74ECDA251801C704005B001B /* UnregisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnregisterViewController.h; sourceTree = "<group>"; };
+		74ECDA261801C704005B001B /* UnregisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnregisterViewController.m; sourceTree = "<group>"; };
+		74ECDA271801C705005B001B /* UnregisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnregisterViewController.xib; sourceTree = "<group>"; };
+		74ECDA2A1801C71E005B001B /* UnregisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnregisterViewController_iPad.xib; sourceTree = "<group>"; };
+		74F144CB1801B54600FBC10B /* agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F144CE1801B54600FBC10B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		74F144D01801B54600FBC10B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		74F144D21801B54600FBC10B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		74F144D61801B54600FBC10B /* agent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agent-Info.plist"; sourceTree = "<group>"; };
+		74F144D81801B54600FBC10B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		74F144DA1801B54600FBC10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		74F144DC1801B54600FBC10B /* agent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "agent-Prefix.pch"; sourceTree = "<group>"; };
+		74F144DD1801B54600FBC10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		74F144DE1801B54600FBC10B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		74F144EB1801B54700FBC10B /* agentTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = agentTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F144EC1801B54700FBC10B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		74F144F41801B54700FBC10B /* agentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agentTests-Info.plist"; sourceTree = "<group>"; };
+		74F144F61801B54700FBC10B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		74F144F81801B54700FBC10B /* WSO2_AgentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSO2_AgentTests.h; sourceTree = "<group>"; };
+		74F144F91801B54700FBC10B /* WSO2_AgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSO2_AgentTests.m; sourceTree = "<group>"; };
+		74F145031801B56500FBC10B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		74F145041801B56500FBC10B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		74F145051801B56500FBC10B /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		74F145081801B57700FBC10B /* WelcomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74F144C81801B54600FBC10B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C73B91187599490078F193 /* MediaPlayer.framework in Frameworks */,
+				14C73B8F18758D640078F193 /* CoreLocation.framework in Frameworks */,
+				74F144CF1801B54600FBC10B /* UIKit.framework in Frameworks */,
+				74F144D11801B54600FBC10B /* Foundation.framework in Frameworks */,
+				74F144D31801B54600FBC10B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F144E71801B54700FBC10B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F144ED1801B54700FBC10B /* SenTestingKit.framework in Frameworks */,
+				74F144EE1801B54700FBC10B /* UIKit.framework in Frameworks */,
+				74F144EF1801B54700FBC10B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74145031182A69560046BAFF /* ApiResponse */ = {
+			isa = PBXGroup;
+			children = (
+				74145032182A69870046BAFF /* ApiResponse.h */,
+				74145033182A69870046BAFF /* ApiResponse.m */,
+				74145036182A6B280046BAFF /* ResponseBuilder.h */,
+				74145037182A6B280046BAFF /* ResponseBuilder.m */,
+				7493CE1D182A8D4700600F36 /* ResponseObject.h */,
+				7493CE1E182A8D4700600F36 /* ResponseObject.m */,
+				7494A6A41803C5D700B1224A /* RegisterDelegate.h */,
+				74E94120180256CF00F03D02 /* ResponseDelegate.h */,
+				7494A6961803AAB800B1224A /* UnregisterDelegate.h */,
+				74DB4A7D1851EB8200F8F820 /* PushDelegate.h */,
+			);
+			name = ApiResponse;
+			sourceTree = "<group>";
+		};
+		7493CE20182A929100600F36 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				74EA6F1718031F5600249B58 /* ActivityView.h */,
+				74EA6F1818031F5600249B58 /* ActivityView.m */,
+				7494A69A1803AE0300B1224A /* Settings.h */,
+				7494A69B1803AE0400B1224A /* Settings.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		7493CE23182AA75200600F36 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74F145031801B56500FBC10B /* WelcomeViewController.h */,
+				74F145041801B56500FBC10B /* WelcomeViewController.m */,
+				74F145051801B56500FBC10B /* WelcomeViewController.xib */,
+				74F145081801B57700FBC10B /* WelcomeViewController_iPad.xib */,
+				7494A69D1803BE9000B1224A /* WebViewController.h */,
+				7494A69E1803BE9100B1224A /* WebViewController.m */,
+				7494A69F1803BE9100B1224A /* WebViewController.xib */,
+				7494A6A21803BFB400B1224A /* WebViewController_iPad.xib */,
+				74ECDA251801C704005B001B /* UnregisterViewController.h */,
+				74ECDA261801C704005B001B /* UnregisterViewController.m */,
+				74ECDA271801C705005B001B /* UnregisterViewController.xib */,
+				74ECDA2A1801C71E005B001B /* UnregisterViewController_iPad.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		74ECDA1B1801BFE8005B001B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74ECDA1C1801C018005B001B /* Resource.plist */,
+				7435FEA91802E17300317D52 /* Endpoints.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		74F144C21801B54600FBC10B = {
+			isa = PBXGroup;
+			children = (
+				74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */,
+				74F144D41801B54600FBC10B /* WSO2 Agent */,
+				74F144F21801B54700FBC10B /* WSO2 AgentTests */,
+				74F144CD1801B54600FBC10B /* Frameworks */,
+				74F144CC1801B54600FBC10B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74F144CC1801B54600FBC10B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74F144CB1801B54600FBC10B /* agent.app */,
+				74F144EB1801B54700FBC10B /* agentTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74F144CD1801B54600FBC10B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14C73B90187599490078F193 /* MediaPlayer.framework */,
+				14C73B8E18758D640078F193 /* CoreLocation.framework */,
+				74F144CE1801B54600FBC10B /* UIKit.framework */,
+				74F144D01801B54600FBC10B /* Foundation.framework */,
+				74F144D21801B54600FBC10B /* CoreGraphics.framework */,
+				74F144EC1801B54700FBC10B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74F144D41801B54600FBC10B /* WSO2 Agent */ = {
+			isa = PBXGroup;
+			children = (
+				7493CE20182A929100600F36 /* Utilities */,
+				74ECDA1B1801BFE8005B001B /* Resources */,
+				74145031182A69560046BAFF /* ApiResponse */,
+				74F144DD1801B54600FBC10B /* AppDelegate.h */,
+				74F144DE1801B54600FBC10B /* AppDelegate.m */,
+				7493CE23182AA75200600F36 /* ViewController */,
+				74F144D51801B54600FBC10B /* Supporting Files */,
+			);
+			name = "WSO2 Agent";
+			path = "MDM Agent";
+			sourceTree = "<group>";
+		};
+		74F144D51801B54600FBC10B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74F144D61801B54600FBC10B /* agent-Info.plist */,
+				74F144D71801B54600FBC10B /* InfoPlist.strings */,
+				74F144DA1801B54600FBC10B /* main.m */,
+				7493CE21182A9E8A00600F36 /* ic_logo.png */,
+				74F144DC1801B54600FBC10B /* agent-Prefix.pch */,
+				749A066918055A4100DF8C27 /* app_icon@2x.png */,
+				749A066718055A3D00DF8C27 /* app_icon.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74F144F21801B54700FBC10B /* WSO2 AgentTests */ = {
+			isa = PBXGroup;
+			children = (
+				74F144F81801B54700FBC10B /* WSO2_AgentTests.h */,
+				74F144F91801B54700FBC10B /* WSO2_AgentTests.m */,
+				74F144F31801B54700FBC10B /* Supporting Files */,
+			);
+			name = "WSO2 AgentTests";
+			path = "MDM AgentTests";
+			sourceTree = "<group>";
+		};
+		74F144F31801B54700FBC10B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74F144F41801B54700FBC10B /* agentTests-Info.plist */,
+				74F144F51801B54700FBC10B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74F144CA1801B54600FBC10B /* agent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74F144FD1801B54700FBC10B /* Build configuration list for PBXNativeTarget "agent" */;
+			buildPhases = (
+				74F144C71801B54600FBC10B /* Sources */,
+				74F144C81801B54600FBC10B /* Frameworks */,
+				74F144C91801B54600FBC10B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = agent;
+			productName = "MDM Agent";
+			productReference = 74F144CB1801B54600FBC10B /* agent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74F144EA1801B54700FBC10B /* agentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74F145001801B54700FBC10B /* Build configuration list for PBXNativeTarget "agentTests" */;
+			buildPhases = (
+				74F144E61801B54700FBC10B /* Sources */,
+				74F144E71801B54700FBC10B /* Frameworks */,
+				74F144E81801B54700FBC10B /* Resources */,
+				74F144E91801B54700FBC10B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74F144F11801B54700FBC10B /* PBXTargetDependency */,
+			);
+			name = agentTests;
+			productName = "MDM AgentTests";
+			productReference = 74F144EB1801B54700FBC10B /* agentTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74F144C31801B54600FBC10B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = WSO2;
+			};
+			buildConfigurationList = 74F144C61801B54600FBC10B /* Build configuration list for PBXProject "agent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 74F144C21801B54600FBC10B;
+			productRefGroup = 74F144CC1801B54600FBC10B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74F144CA1801B54600FBC10B /* agent */,
+				74F144EA1801B54700FBC10B /* agentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74F144C91801B54600FBC10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F144D91801B54600FBC10B /* InfoPlist.strings in Resources */,
+				74F145071801B56500FBC10B /* WelcomeViewController.xib in Resources */,
+				74F145091801B57700FBC10B /* WelcomeViewController_iPad.xib in Resources */,
+				74ECDA1D1801C018005B001B /* Resource.plist in Resources */,
+				74ECDA291801C705005B001B /* UnregisterViewController.xib in Resources */,
+				74ECDA2B1801C71E005B001B /* UnregisterViewController_iPad.xib in Resources */,
+				7435FEAA1802E17300317D52 /* Endpoints.plist in Resources */,
+				7494A6A11803BE9200B1224A /* WebViewController.xib in Resources */,
+				7494A6A31803BFB400B1224A /* WebViewController_iPad.xib in Resources */,
+				74D9561618A0A1A80088FDC4 /* Default-568h@2x.png in Resources */,
+				749A066818055A3E00DF8C27 /* app_icon.png in Resources */,
+				749A066A18055A4100DF8C27 /* app_icon@2x.png in Resources */,
+				7493CE22182A9E8A00600F36 /* ic_logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F144E81801B54700FBC10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F144F71801B54700FBC10B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74F144E91801B54700FBC10B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74F144C71801B54600FBC10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74E941281802698100F03D02 /* Resource.plist in Sources */,
+				74F144DB1801B54600FBC10B /* main.m in Sources */,
+				74F144DF1801B54600FBC10B /* AppDelegate.m in Sources */,
+				74F145061801B56500FBC10B /* WelcomeViewController.m in Sources */,
+				74ECDA281801C705005B001B /* UnregisterViewController.m in Sources */,
+				74EA6F1918031F5700249B58 /* ActivityView.m in Sources */,
+				7494A69C1803AE0400B1224A /* Settings.m in Sources */,
+				7494A6A01803BE9200B1224A /* WebViewController.m in Sources */,
+				74145034182A69870046BAFF /* ApiResponse.m in Sources */,
+				74145038182A6B280046BAFF /* ResponseBuilder.m in Sources */,
+				7493CE1F182A8D4700600F36 /* ResponseObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F144E61801B54700FBC10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74F144FA1801B54700FBC10B /* WSO2_AgentTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74F144F11801B54700FBC10B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74F144CA1801B54600FBC10B /* agent */;
+			targetProxy = 74F144F01801B54700FBC10B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74F144D71801B54600FBC10B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74F144D81801B54600FBC10B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		74F144F51801B54700FBC10B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74F144F61801B54700FBC10B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74F144FB1801B54700FBC10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WSO2 Inc";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74F144FC1801B54700FBC10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WSO2 Inc";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74F144FE1801B54700FBC10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WSO2 Agent/agent-Prefix.pch";
+				INFOPLIST_FILE = "MDM Agent/agent-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/MDM Agent\"",
+				);
+				PRODUCT_NAME = agent;
+				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		74F144FF1801B54700FBC10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WSO2 Agent/agent-Prefix.pch";
+				INFOPLIST_FILE = "MDM Agent/agent-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/MDM Agent\"",
+				);
+				PRODUCT_NAME = agent;
+				PROVISIONING_PROFILE = "17953C46-085C-4615-AB6D-B53250F9DFA2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		74F145011801B54700FBC10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WSO2 Agent.app/WSO2 Agent";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MDM Agent/MDM Agent-Prefix.pch";
+				INFOPLIST_FILE = "MDM AgentTests/agentTests-Info.plist";
+				PRODUCT_NAME = agentTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		74F145021801B54700FBC10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WSO2 Agent.app/WSO2 Agent";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MDM Agent/MDM Agent-Prefix.pch";
+				INFOPLIST_FILE = "MDM AgentTests/agentTests-Info.plist";
+				PRODUCT_NAME = agentTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74F144C61801B54600FBC10B /* Build configuration list for PBXProject "agent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F144FB1801B54700FBC10B /* Debug */,
+				74F144FC1801B54700FBC10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74F144FD1801B54700FBC10B /* Build configuration list for PBXNativeTarget "agent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F144FE1801B54700FBC10B /* Debug */,
+				74F144FF1801B54700FBC10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74F145001801B54700FBC10B /* Build configuration list for PBXNativeTarget "agentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74F145011801B54700FBC10B /* Debug */,
+				74F145021801B54700FBC10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74F144C31801B54600FBC10B /* Project object */;
+}

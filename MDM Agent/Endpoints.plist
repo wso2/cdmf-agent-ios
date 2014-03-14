@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>isregistered</key>
+	<string>/mdm/api/devices/isregistered</string>
+	<key>register</key>
+	<string>/mdm/api/users/authenticate</string>
+	<key>unregister</key>
+	<string>/mdm/api/devices/unregisterios</string>
+	<key>getlicense</key>
+	<string>/mdm/api/devices/license</string>
+	<key>certificateurl</key>
+	<string>/mdm/testconfig.mobileprovision</string>
+	<key>pushtokentoserver</key>
+	<string>/mdm/api/devices/pushtoken</string>
+	<key>locationurl</key>
+	<string>/mdm/api/devices/location</string>
+	<key>loginurl</key>
+	<string>/mdm/certificate</string>
+</dict>
+</plist>
