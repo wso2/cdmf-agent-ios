@@ -20,12 +20,15 @@
     
     //uniqueID = @"d607b9c22764ef3af9a33ddd13d0d6cd58a6546a";
     
+    /*
     if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         uniqueID = [self getMacAddress];
     } else {
         //get UniqueID (UDID) from Resouce.plist
         uniqueID = [self getResourcePlist:DEVICE_UDID];
     }
+    */
+    uniqueID = [self getResourcePlist:DEVICE_UDID];
     
     return uniqueID;
 }

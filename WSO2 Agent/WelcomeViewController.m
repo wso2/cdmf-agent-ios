@@ -139,11 +139,6 @@
 - (IBAction)agree_btnact:(id)sender {
     [self.license_view removeFromSuperview];
     
-    /*
-    WebViewController *webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
-    webViewController.firstDisplay = TRUE;
-    [self.navigationController pushViewController:webViewController animated:YES];
-     */
     [Settings licenseAgreed];
     NSString *endpoint = [Settings getServerURL:LOGINURL];
     NSURL *loginURL = [[NSURL alloc] initWithString:endpoint];

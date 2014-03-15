@@ -15,9 +15,6 @@
 		7493CE1F182A8D4700600F36 /* ResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7493CE1E182A8D4700600F36 /* ResponseObject.m */; };
 		7493CE22182A9E8A00600F36 /* ic_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7493CE21182A9E8A00600F36 /* ic_logo.png */; };
 		7494A69C1803AE0400B1224A /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494A69B1803AE0400B1224A /* Settings.m */; };
-		7494A6A01803BE9200B1224A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494A69E1803BE9100B1224A /* WebViewController.m */; };
-		7494A6A11803BE9200B1224A /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7494A69F1803BE9100B1224A /* WebViewController.xib */; };
-		7494A6A31803BFB400B1224A /* WebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7494A6A21803BFB400B1224A /* WebViewController_iPad.xib */; };
 		749A066818055A3E00DF8C27 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 749A066718055A3D00DF8C27 /* app_icon.png */; };
 		749A066A18055A4100DF8C27 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 749A066918055A4100DF8C27 /* app_icon@2x.png */; };
 		74D9561618A0A1A80088FDC4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */; };
@@ -67,10 +64,6 @@
 		7494A6961803AAB800B1224A /* UnregisterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnregisterDelegate.h; sourceTree = "<group>"; };
 		7494A69A1803AE0300B1224A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		7494A69B1803AE0400B1224A /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
-		7494A69D1803BE9000B1224A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		7494A69E1803BE9100B1224A /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		7494A69F1803BE9100B1224A /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		7494A6A21803BFB400B1224A /* WebViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebViewController_iPad.xib; path = ../WebViewController_iPad.xib; sourceTree = "<group>"; };
 		7494A6A41803C5D700B1224A /* RegisterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDelegate.h; sourceTree = "<group>"; };
 		749A066718055A3D00DF8C27 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../app_icon.png; sourceTree = "<group>"; };
 		749A066918055A4100DF8C27 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../app_icon@2x.png"; sourceTree = "<group>"; };
@@ -167,10 +160,6 @@
 				74F145041801B56500FBC10B /* WelcomeViewController.m */,
 				74F145051801B56500FBC10B /* WelcomeViewController.xib */,
 				74F145081801B57700FBC10B /* WelcomeViewController_iPad.xib */,
-				7494A69D1803BE9000B1224A /* WebViewController.h */,
-				7494A69E1803BE9100B1224A /* WebViewController.m */,
-				7494A69F1803BE9100B1224A /* WebViewController.xib */,
-				7494A6A21803BFB400B1224A /* WebViewController_iPad.xib */,
 				74ECDA251801C704005B001B /* UnregisterViewController.h */,
 				74ECDA261801C704005B001B /* UnregisterViewController.m */,
 				74ECDA271801C705005B001B /* UnregisterViewController.xib */,
@@ -231,7 +220,6 @@
 				7493CE23182AA75200600F36 /* ViewController */,
 				74F144D51801B54600FBC10B /* Supporting Files */,
 			);
-			name = "WSO2 Agent";
 			path = "WSO2 Agent";
 			sourceTree = "<group>";
 		};
@@ -257,7 +245,6 @@
 				74F144F91801B54700FBC10B /* WSO2_AgentTests.m */,
 				74F144F31801B54700FBC10B /* Supporting Files */,
 			);
-			name = "WSO2 AgentTests";
 			path = "WSO2 AgentTests";
 			sourceTree = "<group>";
 		};
@@ -348,8 +335,6 @@
 				74ECDA291801C705005B001B /* UnregisterViewController.xib in Resources */,
 				74ECDA2B1801C71E005B001B /* UnregisterViewController_iPad.xib in Resources */,
 				7435FEAA1802E17300317D52 /* Endpoints.plist in Resources */,
-				7494A6A11803BE9200B1224A /* WebViewController.xib in Resources */,
-				7494A6A31803BFB400B1224A /* WebViewController_iPad.xib in Resources */,
 				74D9561618A0A1A80088FDC4 /* Default-568h@2x.png in Resources */,
 				749A066818055A3E00DF8C27 /* app_icon.png in Resources */,
 				749A066A18055A4100DF8C27 /* app_icon@2x.png in Resources */,
@@ -395,7 +380,6 @@
 				74ECDA281801C705005B001B /* UnregisterViewController.m in Sources */,
 				74EA6F1918031F5700249B58 /* ActivityView.m in Sources */,
 				7494A69C1803AE0400B1224A /* Settings.m in Sources */,
-				7494A6A01803BE9200B1224A /* WebViewController.m in Sources */,
 				74145034182A69870046BAFF /* ApiResponse.m in Sources */,
 				74145038182A6B280046BAFF /* ResponseBuilder.m in Sources */,
 				7493CE1F182A8D4700600F36 /* ResponseObject.m in Sources */,

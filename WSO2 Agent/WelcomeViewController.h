@@ -11,7 +11,6 @@
 #import "ActivityView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Settings.h"
-#import "WebViewController.h"
 #import "RegisterDelegate.h"
 #import "ResponseDelegate.h"
 #import "ApiResponse.h"
