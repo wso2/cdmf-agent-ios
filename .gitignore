@@ -20,4 +20,5 @@ profile
 !default.perspectivev3
 xcuserdata
 *.moved-aside
+agent.xcodeproj/project.xcworkspace/xcuserdata/
 *~
