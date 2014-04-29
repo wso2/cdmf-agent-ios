@@ -7,6 +7,7 @@
 //
 
 #import "WSO2_AgentTests.h"
+#import <OCMock/OCMock.h>
 
 @implementation WSO2_AgentTests
 
@@ -24,9 +25,6 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in WSO2 AgentTests");
-}
+
 
 @end

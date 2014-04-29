@@ -114,7 +114,7 @@
     
     if (aps) {
         NSString *alert = [aps objectForKey:@"alert"];
-        
+    
         if ([@"Device Muted" isEqualToString:alert]) {
             [self muteDevice];
         }

@@ -69,7 +69,8 @@
             //Connection success but License is not changed
             response = nil;
         }
-        responseObject.message = [response copy];
+        r
+ esponseObject.message = [response copy];
     } else if ([request isEqualToString:FAILED]) {
         responseObject.isSuccess = FALSE;
         responseObject.errorTitle = @"Connection Error";
