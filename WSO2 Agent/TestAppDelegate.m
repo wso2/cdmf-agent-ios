@@ -13,15 +13,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  *
- * 	Description : - ResgisterDelegate for recieving device registration status
+ * 	Description : - TestAppDelegate to be used when running unit tests
  */
 
-#import <Foundation/Foundation.h>
-#import "ResponseObject.h"
+#import "TestAppDelegate.h"
 
-@protocol RegisterDelegate
-
-- (void) didReceiveRegistration: (ResponseObject *) responseObject;
-- (void) registerFailedWithError: (ResponseObject *) responseObject;
+@implementation TestAppDelegate
 
 @end

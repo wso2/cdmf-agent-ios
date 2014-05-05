@@ -1,17 +1,24 @@
-//
-//  SettingsTests.m
-//  agent
-//
-//  Created by Dilshan on 4/25/14.
-//  Copyright (c) 2014 WSO2. All rights reserved.
-//
+/**
+ *  Copyright (c) 2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ * 	Description : - Unit test implementations for Settings class
+ */
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "Settings.h"
-#import <OCMock/OCMock.h>
-
-#define TEST_KEY @"TEST_KEY"
-#define TEST_VALUE @"TEST_VALUE"
+#import "TestConstants.h"
 
 
 @interface SettingsTests : SenTestCase
@@ -23,13 +30,11 @@
 - (void)setUp
 {
     [super setUp];
-    [Settings copyResource];
-    // Put setup code here; it will be run once, before the first test case.
 }
 
 - (void)tearDown
 {
-    // Put teardown code here; it will be run once, after the last test case.
+    [Settings updatePlist:ISLICENSEAGREED StringText:@"FALSE"];
     [super tearDown];
 }
 
@@ -51,17 +56,17 @@
 }
 
 - (void)testgetDeviceUnique{
-    STAssertNil([Settings getDeviceUnique], @"DeviceUnique parameter must be nil on initialization");
+    STAssertEqualObjects(TEST_UDID,[Settings getDeviceUnique], @"DeviceUnique parameter must return E1234 on initialization");
 }
 
 - (void)testgetServerURL{
-    //NSString *url = URL_PREFIX + @"";
-    //STAssertNil([Settings getServerURL:@""], @"");
+    NSString *url =[NSString stringWithFormat:@"%@%@%@%@",URL_PREFIX, @"www.wso2.com", PORT,TEST_LOGIN_SERVER_ENDPOINT];
+    STAssertEqualObjects(url,[Settings getServerURL:LOGINURL], @"GetServerURL:LOGINURL must return a valid url");
 }
 
 - (void)testgetEndPoint{
     STAssertNil([Settings getEndpoint:@""], @"GetEndPoint:nil must return nil.");
-    STAssertEqualObjects(@"/mdm/certificate", [Settings getEndpoint:LOGINURL], @"GetEndPoint:LOGINURL must return /mdm/certificate.");
+    STAssertEqualObjects(TEST_LOGIN_SERVER_ENDPOINT, [Settings getEndpoint:LOGINURL], @"GetEndPoint:LOGINURL must return /mdm/certificate.");
 }
 
 - (void)testisDeviceRegistered{
