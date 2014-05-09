@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>isregistered</key>
-	<string>/mdm/api/devices/isregistered</string>
+	<string>/emm/api/devices/isregistered</string>
 	<key>register</key>
-	<string>/mdm/api/users/authenticate</string>
+	<string>/emm/api/users/authenticate</string>
 	<key>unregister</key>
-	<string>/mdm/api/devices/unregisterios</string>
+	<string>/emm/api/devices/unregisterios</string>
 	<key>getlicense</key>
-	<string>/mdm/api/devices/license</string>
+	<string>/emm/api/devices/license</string>
 	<key>certificateurl</key>
-	<string>/mdm/testconfig.mobileprovision</string>
+	<string>/emm/testconfig.mobileprovision</string>
 	<key>pushtokentoserver</key>
-	<string>/mdm/api/devices/pushtoken</string>
+	<string>/emm/api/devices/pushtoken</string>
 	<key>locationurl</key>
-	<string>/mdm/api/devices/location</string>
+	<string>/emm/api/devices/location</string>
 	<key>loginurl</key>
-	<string>/mdm/certificate</string>
+	<string>/emm/deviceloginsign</string>
 </dict>
 </plist>

@@ -80,7 +80,6 @@
    [apiResponse isRegistered:TEST_UDID withCallback:^(ResponseObject *responseObj, BOOL success) {
        if(success){
            STAssertTrue(responseObj.isSuccess, @"Invalid response from ResponseBuilder for isRegistered");
-           STAssertTrue(responseObj.registered, @"Invalid device registered status");
            [self notifyAsyncOperationDone];
        }else{
            STAssertFalse(responseObj.isSuccess, @"Invalid response from ResponseBuilder");
