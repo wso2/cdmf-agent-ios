@@ -1,10 +1,20 @@
-//
-//  WelcomeViewController.m
-//  WSO2 Agent
-//
-//  Created by WSO2 on 10/6/13.
-//  Copyright (c) 2013 WSO2. All rights reserved.
-//
+/**
+ *  Copyright (c) 2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ * 	Description : - WelcomeViewController
+ */
 
 #import "WelcomeViewController.h"
 
@@ -41,11 +51,8 @@
     _manager.registerDelegate = self;
     _manager.responseDelegate = self;
     
-    //NSString *UDID = [device uniqueIdentifier];
-    
     self.activityView = [[ActivityView alloc] init];
     self.server_txt.text = [Settings getResourcePlist:SERVER_URL];
-    //self.server_txt.text = [self getFromResource:@"Server_url"];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(checkDeviceRegistered)
                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -116,19 +123,7 @@
 }
 
 - (IBAction)server_btnact:(id)sender {
-    
-//    self.activityView.msgLabel.text = @"Connecting to Server...";
-//    self.activityView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-//    self.activityView.msgLabel.frame = CGRectMake(0, self.view.center.y - 20.0, self.view.frame.size.width, 22);
-//    self.activityView.activityIndicator.frame = CGRectMake(0, self.view.center.y + 10, self.view.frame.size.width, 37);
-    
-//    [self activityViewSettings:@"Connecting to Server..."];
-//    [self.view addSubview:self.activityView];
-//    
-//    [self.server_txt resignFirstResponder];
-//    [self updatePlist: @"Server_url" StringText:self.server_txt.text];
-//    [self isRegisteredDevice];
-    
+
     [self updatePlist: @"Server_url" StringText:self.server_txt.text];
     NSString *endpoint = [Settings getServerURL:LOGINURL];
     NSURL *loginURL = [[NSURL alloc] initWithString:endpoint];
@@ -164,11 +159,10 @@
     
     if (uniqueID == NULL) {
         //iOS 7 - Device is not registered
-        //[_manager getLicense];
         [self removeLoadScreen];
     } else {
         //below iOS 7 - check registration
-        [_manager isRegistered:uniqueID];
+        [_manager isRegistered:uniqueID withCallback:NULL];
     }
 }
 
@@ -176,7 +170,6 @@
     //The device is already registered.. Jump to Unregister screen
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    //[Settings saveRegistered: @"TRUE"];
     [Settings updatePlist:DEVICEREG StringText:@"TRUE"];
     
     NSMutableArray *viewContArray = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
@@ -199,8 +192,6 @@
     [self removeLoadScreen];
     self.license_txtview.text = licenseText;
     [self.activityView removeFromSuperview];
-    
-    //[self.view addSubview:self.license_view];
 }
 
 - (void) removeLoadScreen {
@@ -213,11 +204,10 @@
 }
 
 - (void) checkDeviceRegistered {
-    //if ([Settings isLicenseAgreed]) {
+
         [self activityViewSettings:@"Checking registration..."];
         [self.view addSubview:self.activityView];
         [self isRegisteredDevice];
-    //}
 }
 
 #pragma Delegate Calls
@@ -230,7 +220,6 @@
             [self performSelectorOnMainThread:@selector(popToUnregister) withObject:nil waitUntilDone:NO];
         } else {
             //The device is not registered.. Display License Agreement
-            //[_manager getLicense];
             [self performSelectorOnMainThread:@selector(removeLoadScreen) withObject:nil waitUntilDone:NO];
         }
     } else {
@@ -275,16 +264,5 @@
     [plistDict writeToFile:plistPath atomically:YES];
 }
 
-/*
-- (NSString *) getFromResource : (NSString *) listKey {
-    
-    NSString *filePath = @"Resource.plist";
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory =  [paths objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:filePath];
-    NSDictionary *plistDict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    return (NSString *)[plistDict objectForKey:listKey];
-}
-*/
 
 @end

@@ -1,10 +1,20 @@
-//
-//  Settings.m
-//  WSO2 Agent
-//
-//  Created by WSO2 on 10/8/13.
-//  Copyright (c) 2013 WSO2. All rights reserved.
-//
+/**
+ *  Copyright (c) 2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ * 	Description : - Class with Utility methods
+ */
 
 #import "Settings.h"
 #include <sys/socket.h>
@@ -15,21 +25,8 @@
 @implementation Settings
 
 + (NSString *) getDeviceUnique {
-    //UIDevice *device = [UIDevice currentDevice];
     NSString *uniqueID ;
-    
-    //uniqueID = @"d607b9c22764ef3af9a33ddd13d0d6cd58a6546a";
-    
-    /*
-    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-        uniqueID = [self getMacAddress];
-    } else {
-        //get UniqueID (UDID) from Resouce.plist
-        uniqueID = [self getResourcePlist:DEVICE_UDID];
-    }
-    */
     uniqueID = [self getResourcePlist:DEVICE_UDID];
-    
     return uniqueID;
 }
 
@@ -155,7 +152,6 @@
     if (success) return;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:RESOURCE_PLIST ofType:@"plist"];
-    //success = [fileManager copyItemAtPath:path toPath:filePath error:&error];
     [fileManager copyItemAtPath:path toPath:filePath error:&error];
 }
 
@@ -195,31 +191,5 @@
     [plistDict setValue:@"TRUE" forKey:ISLICENSEAGREED];
     [plistDict writeToFile:plistPath atomically:YES];
 }
-
-
-/*
-+ (void) saveUDID: (NSString *) udid {
-    NSString *filePath = RESOURCE_PLIST;
-    filePath = [filePath stringByAppendingString:@".plist"];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory =  [paths objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:filePath];
-    NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    [plistDict setValue:udid forKey:APN_UDID];
-    [plistDict writeToFile:plistPath atomically:YES];
-}
-
- + (void) saveRegistered: (NSString *) regValue {
- 
- NSString *filePath = RESOURCE_PLIST;
- filePath = [filePath stringByAppendingString:@".plist"];
- NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
- NSString *documentsDirectory =  [paths objectAtIndex:0];
- NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:filePath];
- NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
- [plistDict setValue:regValue forKey:DEVICEREG];
- [plistDict writeToFile:plistPath atomically:YES];
- }
- */
 
 @end

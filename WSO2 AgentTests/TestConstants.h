@@ -13,15 +13,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  *
- * 	Description : - ResgisterDelegate for recieving device registration status
+ * 	Description : - Test Constants to be used when running unit tests
  */
 
-#import <Foundation/Foundation.h>
-#import "ResponseObject.h"
+#ifndef agent_TestConstants_h
+#define agent_TestConstants_h
 
-@protocol RegisterDelegate
+#define TEST_KEY @"TEST_KEY"
+#define TEST_VALUE @"TEST_VALUE"
+#define TEST_LOGIN_SERVER_ENDPOINT @"/mdm/certificate"
+#define TEST_UDID @"E1234"
+#define TEST_PUSH_TOKEN @"1234"
+#define TEST_LATITUDE 1.234
+#define TEST_LONGITITUDE 1.234
 
-- (void) didReceiveRegistration: (ResponseObject *) responseObject;
-- (void) registerFailedWithError: (ResponseObject *) responseObject;
-
-@end
+#endif
