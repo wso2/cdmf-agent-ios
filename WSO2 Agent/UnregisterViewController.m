@@ -44,6 +44,8 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unregisterSuccess) name:UNREGISTERSUCCESS object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(checkDeviceRegistered)
+                                                name:UIApplicationDidBecomeActiveNotification object:nil];
     
     // Do any additional setup after loading the view from its nib.
     _manager = [[ApiResponse alloc] init];
@@ -51,6 +53,39 @@
     _manager.registerDelegate = self;
     
     self.activityView = [[ActivityView alloc] init];
+}
+
+- (void) checkDeviceRegistered {
+    [self activityViewSettings:@"Checking registration..."];
+    [self.view addSubview:self.activityView];
+    [self isRegisteredDevice];
+}
+
+- (void) isRegisteredDevice {
+    
+    NSString *uniqueID = [Settings getDeviceUnique];
+    self.devUniqueID = uniqueID;
+    
+    if (uniqueID == NULL) {
+        //iOS 7 - Device is not registered
+        [self removeLoadScreen];
+    } else {
+        //below iOS 7 - check registration
+        [_manager isRegistered:uniqueID withCallback:NULL];
+    }
+}
+
+- (void) removeLoadScreen {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.activityView removeFromSuperview];
+    });
+}
+
+- (void) activityViewSettings: (NSString *) message {
+    self.activityView.msgLabel.text = message;
+    self.activityView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.activityView.msgLabel.frame = CGRectMake(0, self.view.center.y - 20.0, self.view.frame.size.width, 22);
+    self.activityView.activityIndicator.frame = CGRectMake(0, self.view.center.y + 10, self.view.frame.size.width, 37);
 }
 
 - (void)viewDidUnload {
@@ -146,6 +181,7 @@
 
 - (void) didReceiveRegistration:(ResponseObject *) responseObject {
     
+    [self removeLoadScreen];
     if (responseObject.isSuccess == TRUE) {
         if (responseObject.registered == TRUE) {
             //Device not unregistered
@@ -160,6 +196,7 @@
 }
 
 - (void) registerFailedWithError:(ResponseObject *) responseObject {
+    [self removeLoadScreen];
     [self performSelectorOnMainThread:@selector(displayErrorMsgOnMain) withObject:responseObject.message waitUntilDone:NO];
 }
 

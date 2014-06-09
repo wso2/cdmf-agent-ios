@@ -188,14 +188,17 @@
 }
 
 - (void) updateLicenseTextView: (NSString *) licenseText {
-    
-    [self removeLoadScreen];
-    self.license_txtview.text = licenseText;
-    [self.activityView removeFromSuperview];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self removeLoadScreen];
+        self.license_txtview.text = licenseText;
+        [self.activityView removeFromSuperview];
+    });
 }
 
 - (void) removeLoadScreen {
-    [self.activityView removeFromSuperview];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.activityView removeFromSuperview];
+    });
 }
 
 - (void) displayErrorMsgOnMain : (ResponseObject *) responseObject {
@@ -204,10 +207,9 @@
 }
 
 - (void) checkDeviceRegistered {
-
-        [self activityViewSettings:@"Checking registration..."];
-        [self.view addSubview:self.activityView];
-        [self isRegisteredDevice];
+    [self activityViewSettings:@"Checking registration..."];
+    [self.view addSubview:self.activityView];
+    [self isRegisteredDevice];
 }
 
 #pragma Delegate Calls

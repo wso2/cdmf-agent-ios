@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>isregistered</key>
-	<string>/emm/api/devices/isregistered</string>
+	<string>/emm/api/devices/isregisteredios</string>
 	<key>register</key>
 	<string>/emm/api/users/authenticate</string>
 	<key>unregister</key>

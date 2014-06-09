@@ -29,6 +29,7 @@
 @property (nonatomic, assign) BOOL unregisterFailed;
 @property (nonatomic, assign) BOOL isPopToRoot;
 @property (strong, nonatomic) ActivityView *activityView;
+@property (weak, nonatomic) NSString *devUniqueID;
 
 - (IBAction)unregister_btnact:(id)sender;
 
