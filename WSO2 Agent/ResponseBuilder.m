@@ -1,10 +1,20 @@
-//
-//  ResponseBuilder.m
-//  WSO2 Agent
-//
-//  Created by WSO2 on 11/6/13.
-//  Copyright (c) 2013 WSO2. All rights reserved.
-//
+/**
+ *  Copyright (c) 2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ * 	Description : - ResponseBuilder class for building the ResponseObject
+ */
 
 #import "ResponseBuilder.h"
 
@@ -56,56 +66,5 @@
     
     return responseObject;
 }
-
-/*
-+ (ResponseObject *)getStringFromJSON: (NSData *) data requestHeader: (NSString *) request {
-    ResponseObject *responseObject = [[ResponseObject alloc] init];
-    NSString *response;
-    
-    if ([request isEqualToString:LICENSE]) {
-        responseObject.isSuccess = TRUE;
-        response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        if (response == NULL) {
-            //Connection success but License is not changed
-            response = nil;
-        }
-        responseObject.message = [response copy];
-    } else if ([request isEqualToString:FAILED]) {
-        responseObject.isSuccess = FALSE;
-        responseObject.errorTitle = @"Connection Error";
-        responseObject.message = @"Error connecting to Server!!!";
-    } else {
-        response = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-        if (response == NULL) {
-            return nil;
-            responseObject.isSuccess = FALSE;
-        } else {
-            response = [response stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            response = [response substringFromIndex:1];
-            response = [response substringToIndex:[response length] -1];
-            response = [response stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            
-            if ([request isEqualToString:ISDEVICEREGISTERED]) {
-                responseObject.isSuccess = TRUE;
-                if ([response isEqualToString:SUCCESS_STATUS])
-                    responseObject.isRegistered = TRUE;
-                else
-                    responseObject.isRegistered = FALSE;
-            } else if ([response isEqualToString:SUCCESS_STATUS]) {
-                //Success
-                responseObject.isSuccess = TRUE;
-            } else {
-                responseObject.isSuccess = FALSE;
-                responseObject.errorTitle = @"Error";
-                responseObject.message = @"Invalid data";
-            }
-        }
-        
-    }
-    
-    return responseObject;
-}
- */
-
 
 @end

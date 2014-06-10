@@ -1,10 +1,20 @@
-//
-//  UnregisterViewController.m
-//  WSO2 Agent
-//
-//  Created by WSO2 on 10/6/13.
-//  Copyright (c) 2013 WSO2. All rights reserved.
-//
+/**
+ *  Copyright (c) 2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ * 	Description : - UnregisterViewController
+ */
 
 #import "UnregisterViewController.h"
 
@@ -34,6 +44,8 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unregisterSuccess) name:UNREGISTERSUCCESS object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(checkDeviceRegistered)
+                                                name:UIApplicationDidBecomeActiveNotification object:nil];
     
     // Do any additional setup after loading the view from its nib.
     _manager = [[ApiResponse alloc] init];
@@ -41,6 +53,39 @@
     _manager.registerDelegate = self;
     
     self.activityView = [[ActivityView alloc] init];
+}
+
+- (void) checkDeviceRegistered {
+    [self activityViewSettings:@"Checking registration..."];
+    [self.view addSubview:self.activityView];
+    [self isRegisteredDevice];
+}
+
+- (void) isRegisteredDevice {
+    
+    NSString *uniqueID = [Settings getDeviceUnique];
+    self.devUniqueID = uniqueID;
+    
+    if (uniqueID == NULL) {
+        //iOS 7 - Device is not registered
+        [self removeLoadScreen];
+    } else {
+        //below iOS 7 - check registration
+        [_manager isRegistered:uniqueID withCallback:NULL];
+    }
+}
+
+- (void) removeLoadScreen {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.activityView removeFromSuperview];
+    });
+}
+
+- (void) activityViewSettings: (NSString *) message {
+    self.activityView.msgLabel.text = message;
+    self.activityView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.activityView.msgLabel.frame = CGRectMake(0, self.view.center.y - 20.0, self.view.frame.size.width, 22);
+    self.activityView.activityIndicator.frame = CGRectMake(0, self.view.center.y + 10, self.view.frame.size.width, 37);
 }
 
 - (void)viewDidUnload {
@@ -82,7 +127,7 @@
     [self.view addSubview:self.activityView];
     
     NSString *uniqueDevice = [Settings getDeviceUnique];
-    [_manager unregisterFromMDM:uniqueDevice];
+    [_manager unregisterFromMDM:uniqueDevice withCallback:NULL];
     self.unregisterFailed = FALSE;
     self.isPopToRoot = FALSE;
 
@@ -118,7 +163,7 @@
             //Device is unregistered
             [self performSelectorOnMainThread:@selector(popToWelcomeScreen) withObject:nil waitUntilDone:NO];
         } else {
-            [_manager isRegistered:[Settings getDeviceUnique]];
+            [_manager isRegistered:[Settings getDeviceUnique] withCallback:NULL];
         }
     } else {
         //Unregister failed
@@ -136,12 +181,12 @@
 
 - (void) didReceiveRegistration:(ResponseObject *) responseObject {
     
+    [self removeLoadScreen];
     if (responseObject.isSuccess == TRUE) {
         if (responseObject.registered == TRUE) {
             //Device not unregistered
         } else {
             //Device has been unregistered successfully
-            //[Settings saveRegistered: @"FALSE"];
             [Settings updatePlist:DEVICEREG StringText:@"FALSE"];
             [self performSelectorOnMainThread:@selector(popToWelcomeScreen) withObject:nil waitUntilDone:NO];
         }
@@ -151,6 +196,7 @@
 }
 
 - (void) registerFailedWithError:(ResponseObject *) responseObject {
+    [self removeLoadScreen];
     [self performSelectorOnMainThread:@selector(displayErrorMsgOnMain) withObject:responseObject.message waitUntilDone:NO];
 }
 

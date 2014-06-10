@@ -1,10 +1,20 @@
-//
-//  AppDelegate.m
-//  WSO2 Agent
-//
-//  Created by WSO2 on 10/6/13.
-//  Copyright (c) 2013 WSO2. All rights reserved.
-//
+/**
+ *  Copyright (c) 2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ * 	Description : - AppDelegate
+ */
 
 #import "AppDelegate.h"
 
@@ -21,15 +31,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-//    _manager = [[ApiResponse alloc] init];
-//    _manager.registerDelegate = self;
-//    _manager.responseDelegate = self;
-    
     _manager = [[ApiResponse alloc] init];
     _manager.pushDelegate = self;
     
-    //[[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
     [self registerForPushToken];
     
     [Settings copyResource];
@@ -84,7 +88,7 @@
     [self showMainWindow];
     
     if([Settings getResourcePlist:PUSH_TOKEN] && [Settings getResourcePlist:DEVICE_UDID]) {
-        [_manager sendPushTokenToServer:[Settings getResourcePlist:PUSH_TOKEN] UDID:[Settings getResourcePlist:DEVICE_UDID]];
+        [_manager sendPushTokenToServer:[Settings getResourcePlist:PUSH_TOKEN] UDID:[Settings getResourcePlist:DEVICE_UDID] withCallback:NULL];
     }
     
     [self initLocation];
@@ -114,7 +118,7 @@
     
     if (aps) {
         NSString *alert = [aps objectForKey:@"alert"];
-        
+    
         if ([@"Device Muted" isEqualToString:alert]) {
             [self muteDevice];
         }
@@ -138,7 +142,7 @@
                 //Save the new token and push it to the server
                 [Settings updatePlist:PUSH_TOKEN StringText:token];
                 [Settings updatePlist:PUSHTOKENTOSERVER StringText:@"FALSE"];
-                [_manager sendPushTokenToServer:token UDID:udid];
+                [_manager sendPushTokenToServer:token UDID:udid withCallback:NULL];
             }
         }
     }
@@ -196,7 +200,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Location updated %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-    [_manager sendLocationToServer:newLocation];
+    [_manager sendLocationToServer:newLocation withCallback:NULL];
 }
 
 

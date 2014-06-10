@@ -17,6 +17,8 @@
 		7494A69C1803AE0400B1224A /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7494A69B1803AE0400B1224A /* Settings.m */; };
 		749A066818055A3E00DF8C27 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 749A066718055A3D00DF8C27 /* app_icon.png */; };
 		749A066A18055A4100DF8C27 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 749A066918055A4100DF8C27 /* app_icon@2x.png */; };
+		74C6E23D190AD0C800BFC374 /* ApiResponseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C6E23C190AD0C800BFC374 /* ApiResponseTest.m */; };
+		74C6E243190AD27F00BFC374 /* SettingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C6E242190AD27F00BFC374 /* SettingsTests.m */; };
 		74D9561618A0A1A80088FDC4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */; };
 		74E941281802698100F03D02 /* Resource.plist in Sources */ = {isa = PBXBuildFile; fileRef = 74ECDA1C1801C018005B001B /* Resource.plist */; };
 		74EA6F1918031F5700249B58 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6F1818031F5600249B58 /* ActivityView.m */; };
@@ -34,10 +36,14 @@
 		74F144EE1801B54700FBC10B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144CE1801B54600FBC10B /* UIKit.framework */; };
 		74F144EF1801B54700FBC10B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F144D01801B54600FBC10B /* Foundation.framework */; };
 		74F144F71801B54700FBC10B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74F144F51801B54700FBC10B /* InfoPlist.strings */; };
-		74F144FA1801B54700FBC10B /* WSO2_AgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F144F91801B54700FBC10B /* WSO2_AgentTests.m */; };
 		74F145061801B56500FBC10B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F145041801B56500FBC10B /* WelcomeViewController.m */; };
 		74F145071801B56500FBC10B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F145051801B56500FBC10B /* WelcomeViewController.xib */; };
 		74F145091801B57700FBC10B /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F145081801B57700FBC10B /* WelcomeViewController_iPad.xib */; };
+		8404D1061917A9DC00A5488F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C73B8E18758D640078F193 /* CoreLocation.framework */; };
+		840E151119160CBD00E28036 /* libOHHTTPStubs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E151019160CBD00E28036 /* libOHHTTPStubs.a */; };
+		840E1535191619FE00E28036 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E1534191619FE00E28036 /* CFNetwork.framework */; };
+		840E1538191642C200E28036 /* AsyncSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E1537191642C200E28036 /* AsyncSenTestCase.m */; };
+		8462910119139434001146DA /* TestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8462910019139434001146DA /* TestAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,8 @@
 		7494A6A41803C5D700B1224A /* RegisterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterDelegate.h; sourceTree = "<group>"; };
 		749A066718055A3D00DF8C27 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../app_icon.png; sourceTree = "<group>"; };
 		749A066918055A4100DF8C27 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../app_icon@2x.png"; sourceTree = "<group>"; };
+		74C6E23C190AD0C800BFC374 /* ApiResponseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiResponseTest.m; sourceTree = "<group>"; };
+		74C6E242190AD27F00BFC374 /* SettingsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTests.m; sourceTree = "<group>"; };
 		74D9561518A0A1A80088FDC4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		74DB4A7D1851EB8200F8F820 /* PushDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushDelegate.h; sourceTree = "<group>"; };
 		74E94120180256CF00F03D02 /* ResponseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseDelegate.h; sourceTree = "<group>"; };
@@ -77,7 +85,7 @@
 		74ECDA261801C704005B001B /* UnregisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnregisterViewController.m; sourceTree = "<group>"; };
 		74ECDA271801C705005B001B /* UnregisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnregisterViewController.xib; sourceTree = "<group>"; };
 		74ECDA2A1801C71E005B001B /* UnregisterViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnregisterViewController_iPad.xib; sourceTree = "<group>"; };
-		74F144CB1801B54600FBC10B /* agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F144CB1801B54600FBC10B /* WSO2 Agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSO2 Agent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F144CE1801B54600FBC10B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		74F144D01801B54600FBC10B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		74F144D21801B54600FBC10B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,12 +99,22 @@
 		74F144EC1801B54700FBC10B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		74F144F41801B54700FBC10B /* agentTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "agentTests-Info.plist"; sourceTree = "<group>"; };
 		74F144F61801B54700FBC10B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		74F144F81801B54700FBC10B /* WSO2_AgentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSO2_AgentTests.h; sourceTree = "<group>"; };
-		74F144F91801B54700FBC10B /* WSO2_AgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSO2_AgentTests.m; sourceTree = "<group>"; };
 		74F145031801B56500FBC10B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		74F145041801B56500FBC10B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		74F145051801B56500FBC10B /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		74F145081801B57700FBC10B /* WelcomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController_iPad.xib; sourceTree = "<group>"; };
+		840E150E19160C8100E28036 /* libOHHTTPStubs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOHHTTPStubs.a; path = Library/libOHHTTPStubs.a; sourceTree = "<group>"; };
+		840E151019160CBD00E28036 /* libOHHTTPStubs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOHHTTPStubs.a; sourceTree = "<group>"; };
+		840E151319160CD600E28036 /* OHHTTPStubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubs.h; sourceTree = "<group>"; };
+		840E151419160CD600E28036 /* OHHTTPStubsResponse+HTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubsResponse+HTTPMessage.h"; sourceTree = "<group>"; };
+		840E151519160CD600E28036 /* OHHTTPStubsResponse+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubsResponse+JSON.h"; sourceTree = "<group>"; };
+		840E151619160CD600E28036 /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubsResponse.h; sourceTree = "<group>"; };
+		840E1534191619FE00E28036 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		840E1536191642B600E28036 /* AsyncSenTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSenTestCase.h; sourceTree = "<group>"; };
+		840E1537191642C200E28036 /* AsyncSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSenTestCase.m; sourceTree = "<group>"; };
+		842572FF190FC0A700ED288C /* TestConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestConstants.h; sourceTree = "<group>"; };
+		846290FF19139434001146DA /* TestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppDelegate.h; sourceTree = "<group>"; };
+		8462910019139434001146DA /* TestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +134,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8404D1061917A9DC00A5488F /* CoreLocation.framework in Frameworks */,
+				840E1535191619FE00E28036 /* CFNetwork.framework in Frameworks */,
+				840E151119160CBD00E28036 /* libOHHTTPStubs.a in Frameworks */,
 				74F144ED1801B54700FBC10B /* SenTestingKit.framework in Frameworks */,
 				74F144EE1801B54700FBC10B /* UIKit.framework in Frameworks */,
 				74F144EF1801B54700FBC10B /* Foundation.framework in Frameworks */,
@@ -168,6 +189,15 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		74CBACF2190A884800349F4E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				840E151219160CD600E28036 /* OHHTTPStubs */,
+				840E151019160CBD00E28036 /* libOHHTTPStubs.a */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		74ECDA1B1801BFE8005B001B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +210,7 @@
 		74F144C21801B54600FBC10B = {
 			isa = PBXGroup;
 			children = (
+				74CBACF2190A884800349F4E /* Library */,
 				74F144D41801B54600FBC10B /* WSO2 Agent */,
 				74F144F21801B54700FBC10B /* WSO2 AgentTests */,
 				74F144CD1801B54600FBC10B /* Frameworks */,
@@ -190,7 +221,7 @@
 		74F144CC1801B54600FBC10B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74F144CB1801B54600FBC10B /* agent.app */,
+				74F144CB1801B54600FBC10B /* WSO2 Agent.app */,
 				74F144EB1801B54700FBC10B /* agentTests.octest */,
 			);
 			name = Products;
@@ -199,6 +230,8 @@
 		74F144CD1801B54600FBC10B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				840E1534191619FE00E28036 /* CFNetwork.framework */,
+				840E150E19160C8100E28036 /* libOHHTTPStubs.a */,
 				14C73B90187599490078F193 /* MediaPlayer.framework */,
 				14C73B8E18758D640078F193 /* CoreLocation.framework */,
 				74F144CE1801B54600FBC10B /* UIKit.framework */,
@@ -215,10 +248,12 @@
 				7493CE20182A929100600F36 /* Utilities */,
 				74ECDA1B1801BFE8005B001B /* Resources */,
 				74145031182A69560046BAFF /* ApiResponse */,
-				74F144DD1801B54600FBC10B /* AppDelegate.h */,
-				74F144DE1801B54600FBC10B /* AppDelegate.m */,
 				7493CE23182AA75200600F36 /* ViewController */,
 				74F144D51801B54600FBC10B /* Supporting Files */,
+				846290FF19139434001146DA /* TestAppDelegate.h */,
+				8462910019139434001146DA /* TestAppDelegate.m */,
+				74F144DD1801B54600FBC10B /* AppDelegate.h */,
+				74F144DE1801B54600FBC10B /* AppDelegate.m */,
 			);
 			path = "WSO2 Agent";
 			sourceTree = "<group>";
@@ -241,9 +276,12 @@
 		74F144F21801B54700FBC10B /* WSO2 AgentTests */ = {
 			isa = PBXGroup;
 			children = (
-				74F144F81801B54700FBC10B /* WSO2_AgentTests.h */,
-				74F144F91801B54700FBC10B /* WSO2_AgentTests.m */,
+				840E1537191642C200E28036 /* AsyncSenTestCase.m */,
+				840E1536191642B600E28036 /* AsyncSenTestCase.h */,
+				74C6E242190AD27F00BFC374 /* SettingsTests.m */,
 				74F144F31801B54700FBC10B /* Supporting Files */,
+				74C6E23C190AD0C800BFC374 /* ApiResponseTest.m */,
+				842572FF190FC0A700ED288C /* TestConstants.h */,
 			);
 			path = "WSO2 AgentTests";
 			sourceTree = "<group>";
@@ -255,6 +293,17 @@
 				74F144F51801B54700FBC10B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		840E151219160CD600E28036 /* OHHTTPStubs */ = {
+			isa = PBXGroup;
+			children = (
+				840E151319160CD600E28036 /* OHHTTPStubs.h */,
+				840E151419160CD600E28036 /* OHHTTPStubsResponse+HTTPMessage.h */,
+				840E151519160CD600E28036 /* OHHTTPStubsResponse+JSON.h */,
+				840E151619160CD600E28036 /* OHHTTPStubsResponse.h */,
+			);
+			path = OHHTTPStubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +323,7 @@
 			);
 			name = agent;
 			productName = "WSO2 Agent";
-			productReference = 74F144CB1801B54600FBC10B /* agent.app */;
+			productReference = 74F144CB1801B54600FBC10B /* WSO2 Agent.app */;
 			productType = "com.apple.product-type.application";
 		};
 		74F144EA1801B54700FBC10B /* agentTests */ = {
@@ -302,8 +351,14 @@
 		74F144C31801B54600FBC10B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = WSO2;
+				TargetAttributes = {
+					74F144CA1801B54600FBC10B = {
+						DevelopmentTeam = KED4SHKL8S;
+					};
+				};
 			};
 			buildConfigurationList = 74F144C61801B54600FBC10B /* Build configuration list for PBXProject "agent" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -377,6 +432,7 @@
 				74F144DB1801B54600FBC10B /* main.m in Sources */,
 				74F144DF1801B54600FBC10B /* AppDelegate.m in Sources */,
 				74F145061801B56500FBC10B /* WelcomeViewController.m in Sources */,
+				8462910119139434001146DA /* TestAppDelegate.m in Sources */,
 				74ECDA281801C705005B001B /* UnregisterViewController.m in Sources */,
 				74EA6F1918031F5700249B58 /* ActivityView.m in Sources */,
 				7494A69C1803AE0400B1224A /* Settings.m in Sources */,
@@ -390,7 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74F144FA1801B54700FBC10B /* WSO2_AgentTests.m in Sources */,
+				74C6E23D190AD0C800BFC374 /* ApiResponseTest.m in Sources */,
+				74C6E243190AD27F00BFC374 /* SettingsTests.m in Sources */,
+				840E1538191642C200E28036 /* AsyncSenTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,8 +494,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WSO2 Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niranjan Karunanandham (EP58FS3T4K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niranjan Karunanandham (EP58FS3T4K)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -450,10 +508,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
+				PROVISIONING_PROFILE = "8D654777-2E4A-400F-9E9B-0806460648FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D654777-2E4A-400F-9E9B-0806460648FC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,37 +529,39 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WSO2 Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niranjan Karunanandham (EP58FS3T4K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niranjan Karunanandham (EP58FS3T4K)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
+				PROVISIONING_PROFILE = "8D654777-2E4A-400F-9E9B-0806460648FC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D654777-2E4A-400F-9E9B-0806460648FC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
 		74F144FE1801B54700FBC10B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niranjan Karunanandham (EP58FS3T4K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WSO2 Agent/agent-Prefix.pch";
 				INFOPLIST_FILE = "WSO2 Agent/agent-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/WSO2 Agent\"",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
 				);
-				PRODUCT_NAME = agent;
-				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
+				PRODUCT_NAME = "WSO2 Agent";
+				PROVISIONING_PROFILE = "8D654777-2E4A-400F-9E9B-0806460648FC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -509,17 +569,18 @@
 		74F144FF1801B54700FBC10B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Niranjan Karunanandham (EP58FS3T4K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WSO2 Agent/agent-Prefix.pch";
 				INFOPLIST_FILE = "WSO2 Agent/agent-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/WSO2 Agent\"",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
 				);
-				PRODUCT_NAME = agent;
-				PROVISIONING_PROFILE = "00D42E91-57EF-4988-A469-05D84EBD3D4B";
+				PRODUCT_NAME = "WSO2 Agent";
+				PROVISIONING_PROFILE = "8D654777-2E4A-400F-9E9B-0806460648FC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -534,7 +595,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WSO2 Agent/WSO2 Agent-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Library",
+				);
 				INFOPLIST_FILE = "WSO2 AgentTests/agentTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Library",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = agentTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -551,7 +623,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WSO2 Agent/WSO2 Agent-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Library",
+				);
 				INFOPLIST_FILE = "WSO2 AgentTests/agentTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Library",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = agentTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
