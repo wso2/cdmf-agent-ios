@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qTg-lr-Zb6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-yl-pwy">
+                                <frame key="frameInset" minX="214" minY="161" width="172" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="KJM-QB-sjp"/>
+                                    <constraint firstAttribute="width" constant="172" id="akQ-xs-BjR"/>
+                                </constraints>
+                                <state key="normal" title="Unregister" backgroundImage="ButtonImages">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickOnUnRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6O8-3d-43S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EFj-yl-pwy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K3f-UX-z7H"/>
+                            <constraint firstItem="EFj-yl-pwy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="PhK-CD-4xE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="271"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="y0U-Bh-OLT">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" title="LoginViewController" id="qTg-lr-Zb6" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IQn-D0-qtt"/>
+                        <viewControllerLayoutGuide type="bottom" id="ujk-Br-Ske"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZD-ej-fVq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set your server address here to start registration (i.e. www.abc.com)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7v-4T-Vc8">
+                                <frame key="frameInset" minX="20" minY="69" width="560" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://mdm.wso2.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBV-H8-qQF">
+                                <frame key="frameInset" minX="25" minY="164" width="550" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qTg-lr-Zb6" id="kZ9-1h-CJc"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-zP-a5q">
+                                <frame key="frameInset" minX="200" minY="224" width="200" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="61u-uq-3SE"/>
+                                    <constraint firstAttribute="height" constant="56" id="QHu-jM-Zk7"/>
+                                </constraints>
+                                <state key="normal" title="Start Registration" backgroundImage="ButtonImages">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickOnRegister:" destination="qTg-lr-Zb6" eventType="touchUpInside" id="fw1-9B-T1Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eBV-H8-qQF" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leading" constant="25" id="6yf-mK-R4v"/>
+                            <constraint firstAttribute="trailing" secondItem="eBV-H8-qQF" secondAttribute="trailing" constant="25" id="Aty-NA-Aag"/>
+                            <constraint firstItem="u7v-4T-Vc8" firstAttribute="top" secondItem="IQn-D0-qtt" secondAttribute="bottom" constant="49" id="JzZ-g9-udi"/>
+                            <constraint firstItem="u7v-4T-Vc8" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leadingMargin" constant="4" id="L0w-Vu-J2M"/>
+                            <constraint firstItem="Y2Z-zP-a5q" firstAttribute="top" secondItem="LZD-ej-fVq" secondAttribute="top" constant="224" id="LFV-N4-gYh"/>
+                            <constraint firstAttribute="centerX" secondItem="eBV-H8-qQF" secondAttribute="centerX" id="XRB-Jw-J4B"/>
+                            <constraint firstAttribute="centerX" secondItem="u7v-4T-Vc8" secondAttribute="centerX" id="ZYY-gi-pfG"/>
+                            <constraint firstItem="eBV-H8-qQF" firstAttribute="top" secondItem="u7v-4T-Vc8" secondAttribute="bottom" constant="25" id="gOK-dM-LoF"/>
+                            <constraint firstAttribute="centerX" secondItem="eBV-H8-qQF" secondAttribute="centerX" id="rOQ-wV-2LB"/>
+                            <constraint firstAttribute="centerX" secondItem="Y2Z-zP-a5q" secondAttribute="centerX" id="sF0-nv-Ni5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rOQ-wV-2LB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="btnRegister" destination="Y2Z-zP-a5q" id="ceb-U6-saO"/>
+                        <outlet property="serverURL" destination="eBV-H8-qQF" id="qHj-XU-bsa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97g-Vb-wtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="271"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ButtonImages" width="200" height="82"/>
+    </resources>
+</document>

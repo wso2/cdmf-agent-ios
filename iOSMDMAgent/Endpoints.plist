@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OPERATION_URI</key>
+	<string>/operation/%@</string>
+	<key>REFRESH_TOKEN_URI</key>
+	<string>/oauth2/token</string>
+	<key>UNENROLLMENT_PATH</key>
+	<string>/admin/devices/enterprise-wipe</string>
+	<key>SERVER_CONTEXT</key>
+	<string>/api/device-mgt/ios/v1.0</string>
+	<key>TOKEN_PUBLISH_URI</key>
+	<string>/devices/pushtoken/%@</string>
+	<key>LOCATION_PUBLISH_URI</key>
+	<string>/devices/location/%@</string>
+	<key>ENROLLMENT_URI</key>
+	<string>/emm-web-agent/enrollments/ios/login-agent</string>
+</dict>
+</plist>

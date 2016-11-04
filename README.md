@@ -1,3 +1,4 @@
-ios-mdm-agent
-=============
-iOS agent application of WSO2 EMM. 
+WSO2 EMM iOS Agent
+================
+
+This is the iOS agent code repository of WSO2 EMM
