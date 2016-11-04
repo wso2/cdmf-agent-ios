@@ -1,3 +1,3 @@
 ios-mdm-agent
 =============
-Agent application for iOS MDM. 
+iOS agent application of WSO2 EMM. 
