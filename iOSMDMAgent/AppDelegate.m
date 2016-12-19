@@ -213,7 +213,7 @@
     
     NSError *error = nil;
     self.theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
     [[AVAudioSession sharedInstance] setActive: YES error: nil];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self.theAudio play];
