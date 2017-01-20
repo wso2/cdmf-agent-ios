@@ -5,7 +5,7 @@
 	<key>OPERATION_URI</key>
 	<string>/operation/%@</string>
 	<key>REFRESH_TOKEN_URI</key>
-	<string>/oauth2/token</string>
+	<string>/token</string>
 	<key>UNENROLLMENT_PATH</key>
 	<string>/admin/devices/enterprise-wipe</string>
 	<key>SERVER_CONTEXT</key>
@@ -15,6 +15,10 @@
 	<key>LOCATION_PUBLISH_URI</key>
 	<string>/devices/location/%@</string>
 	<key>ENROLLMENT_URI</key>
-	<string>/emm-web-agent/enrollments/ios/login-agent</string>
+	<string>/ios-web-agent/enrollments/ios/login-agent</string>
+	<key>API_PORT</key>
+	<string>8243</string>
+	<key>ENROLMENT_PORT</key>
+	<string>9443</string>
 </dict>
 </plist>

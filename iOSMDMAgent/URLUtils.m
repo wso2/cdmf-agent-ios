@@ -22,6 +22,8 @@ NSString *const OPERATION_URI = @"OPERATION_URI";
 NSString *const LOCATION_PUBLISH_URI = @"LOCATION_PUBLISH_URI";
 NSString *const SERVER_URL = @"SERVER_URL";
 NSString *const CONTEXT_URI = @"SERVER_CONTEXT";
+NSString *const API_PORT = @"API_PORT";
+NSString *const ENROLMENT_PORT = @"ENROLMENT_PORT";
 NSString *const TOKEN = @"token";
 NSString *const GET = @"GET";
 NSString *const POST = @"POST";
@@ -55,11 +57,19 @@ NSString *const STATUS = @"status";
 }
 
 + (NSString *)getEnrollmentURL {
-    return [NSString stringWithFormat:@"%@%@", [URLUtils getServerURL], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
 }
 
 + (NSString *)getContextURL {
     return [[URLUtils readEndpoints] objectForKey:CONTEXT_URI];
+}
+
++ (NSString *)getAPIPort {
+    return [[URLUtils readEndpoints] objectForKey:API_PORT];
+}
+
++ (NSString *)getEnrolmentPort {
+    return [[URLUtils readEndpoints] objectForKey:ENROLMENT_PORT];
 }
 
 + (void)saveServerURL:(NSString *)serverURL {
@@ -69,23 +79,23 @@ NSString *const STATUS = @"status";
 }
 
 + (NSString *)getTokenPublishURL {
-    return [NSString stringWithFormat:@"%@%@%@", [URLUtils getServerURL], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:TOKEN_PUBLISH_URI]];
+    return [NSString stringWithFormat:@"%@:%@%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:TOKEN_PUBLISH_URI]];
 }
 
 + (NSString *)getLocationPublishURL {
-    return [NSString stringWithFormat:@"%@%@%@", [URLUtils getServerURL], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:LOCATION_PUBLISH_URI]];
+    return [NSString stringWithFormat:@"%@:%@%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:LOCATION_PUBLISH_URI]];
 }
 
 + (NSString *)getOperationURL {
-    return [NSString stringWithFormat:@"%@%@%@", [URLUtils getServerURL], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:OPERATION_URI]];
+    return [NSString stringWithFormat:@"%@:%@%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:OPERATION_URI]];
 }
 
 + (NSString *)getUnenrollURL {
-    return [NSString stringWithFormat:@"%@%@%@", [URLUtils getServerURL], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:UNENROLLMENT_PATH]];
+    return [NSString stringWithFormat:@"%@:%@%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:UNENROLLMENT_PATH]];
 }
 
 + (NSString *)getRefreshTokenURL{
-    return [NSString stringWithFormat:@"%@%@", [URLUtils getServerURL], [[URLUtils readEndpoints] objectForKey:REFRESH_TOKEN_URI]];
+    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [[URLUtils readEndpoints] objectForKey:REFRESH_TOKEN_URI]];
 }
 
 @end
