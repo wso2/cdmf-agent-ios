@@ -52,12 +52,11 @@ NSString *const STATUS = @"status";
 }
 
 + (NSString *)getServerURL {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults objectForKey:SERVER_URL];
+    return [[URLUtils readEndpoints] objectForKey:SERVER_URL];
 }
 
 + (NSString *)getEnrollmentURL {
-    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+    return [NSString stringWithFormat:@"%@", [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
 }
 
 + (NSString *)getContextURL {
