@@ -2,9 +2,6 @@
 //  AppDelegate.m
 //  iOSMDMAgent
 //
-//  Created by Dilshan Edirisuriya on 2/5/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
 
 #import "AppDelegate.h"
 #import "MDMUtils.h"

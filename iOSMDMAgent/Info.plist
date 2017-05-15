@@ -39,7 +39,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>MDM server will require to pull location updates</string>
+	<string>Device Cloud server will require to pull location updates</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

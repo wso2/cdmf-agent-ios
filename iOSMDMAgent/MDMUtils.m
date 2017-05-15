@@ -51,12 +51,12 @@ NSString *const LOCATION_OPERATION_ID = @"LOCATION_OPERATION_ID";
 
 + (NSString *) getLocationOperationId {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults objectForKey:ENROLL_STATUS];
+    return [userDefaults objectForKey:LOCATION_OPERATION_ID];
 }
 
 + (void) setLocationOperationId: (NSString *)value {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:value forKey:ENROLL_STATUS];
+    [userDefaults setObject:value forKey:LOCATION_OPERATION_ID];
     [userDefaults synchronize];
 }
 
