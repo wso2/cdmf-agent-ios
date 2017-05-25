@@ -2,9 +2,7 @@
 //  URLUtils.h
 //  iOSMDMAgent
 //
-//  Created by Dilshan Edirisuriya on 3/23/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 
@@ -33,7 +31,7 @@ extern NSString *const AUTHORIZATION_BEARER;
 extern NSString *const AUTHORIZATION_BASIC;
 extern NSString *const AUTHORIZATION;
 extern NSString *const REFRESH_TOKEN_URI;
-extern NSString *const REFRESH_TOKEN;
+extern NSString *const REFRESH_TOKEN_LABEL;
 extern NSString *const GRANT_TYPE;
 extern NSString *const GRANT_TYPE_VALUE;
 extern NSString *const FORM_ENCODED;

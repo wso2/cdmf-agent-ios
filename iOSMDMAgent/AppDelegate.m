@@ -8,6 +8,8 @@
 #import "KeychainItemWrapper.h"
 #import "ConnectionUtils.h"
 
+#define systemSoundID    1154
+
 @interface AppDelegate ()
 @end
 
@@ -87,6 +89,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken {
 
+    NSLog(@"Sending push token to the server");
     //Check if the UDID is stored
     NSString *udid = [MDMUtils getDeviceUDID];
     
@@ -113,9 +116,11 @@
 }
 
 - (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"handleOpenURL:Decoding URL");
     NSString *accessToken;
     NSString *refreshToken;
     NSString *clientCredentials;
+    NSString *tenantDomain;
     NSString *udid = [[url host] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [MDMUtils saveDeviceUDID:udid];
     NSArray *queryParams = [[url query] componentsSeparatedByString:@"&"];
@@ -132,16 +137,20 @@
         else if([key isEqualToString:@"clientCredentials"]){
             clientCredentials = value;
         }
+        else if ([key isEqualToString:@"tenantDomain"]) {
+            tenantDomain = value;
+        }
     }
     
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    [wrapper setObject:accessToken forKey:(__bridge id)(kSecAttrAccount)];
-    [wrapper setObject:refreshToken forKey:(__bridge id)(kSecValueData)];
-    [wrapper setObject:clientCredentials forKey: (__bridge id)kSecAttrService];
+//    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
+//    [wrapper setObject:accessToken forKey:(__bridge id)(kSecAttrAccount)];
+//    [wrapper setObject:refreshToken forKey:(__bridge id)(kSecValueData)];
+//    [wrapper setObject:clientCredentials forKey: (__bridge id)kSecAttrService];
     
-    NSString *storedAccessToken = [wrapper objectForKey:(__bridge id)(kSecAttrAccount)];
-    NSString *storedRefreshToken = [wrapper objectForKey:(__bridge id)(kSecValueData)];
-    NSString *clientCredentialsValue = [wrapper objectForKey:(__bridge id)(kSecAttrService)];
+    [MDMUtils setAccessToken:accessToken];
+    [MDMUtils setRefreshToken:refreshToken];
+    [MDMUtils setClientCredentials:clientCredentials];
+    [MDMUtils setTenantDomain:tenantDomain];
     
     [self registerForPushToken];
     [MDMUtils setEnrollStatus:ENROLLED];
@@ -166,6 +175,8 @@
 
 - (void) registerForPushToken {
     
+    NSLog(@"Registering for push token");
+    
     UIApplication *application = [UIApplication sharedApplication];
     if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
         // iOS 8 Notifications
@@ -179,6 +190,7 @@
 }
 
 - (void)initLocation {
+    NSLog(@"Initializing location manager");
     __block UIBackgroundTaskIdentifier bgTask =0;
     UIApplication  *application = [UIApplication sharedApplication];
     bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
@@ -191,8 +203,10 @@
     NSLog(@"Calling didFailWithError %@", [error localizedDescription]);
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    NSLog(@"Sending location updates to the server");
+    
     NSString *udid = [MDMUtils getDeviceUDID];
     CLLocation *location = [locations lastObject];
     
@@ -205,6 +219,7 @@
 
 - (void)triggerAlert {
     //initializing sound files
+    NSLog(@"Start ringing the device");
     NSString *soundPath =[[NSBundle mainBundle] pathForResource:SOUND_FILE_NAME ofType:SOUND_FILE_EXTENSION];
     NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
     
@@ -214,6 +229,11 @@
     [[AVAudioSession sharedInstance] setActive: YES error: nil];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self.theAudio play];
+//    // declared system sound here
+//    
+//    // to play sound
+//    AudioServicesPlaySystemSound (systemSoundID);
+
 }
 
 @end

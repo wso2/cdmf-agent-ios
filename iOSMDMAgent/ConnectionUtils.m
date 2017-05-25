@@ -35,16 +35,25 @@
     
     [self setAllowsAnyHTTPSCertificate:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        int code = [(NSHTTPURLResponse *)response statusCode];
-        
-        if (code != HTTP_OK) {
-            NSLog(@"Error occurred %i", code);
+        long code = [(NSHTTPURLResponse *)response statusCode];
+        NSString *returnedData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        if (returnedData != nil) {
+            NSLog(@"sendPushTokenToServer:Data recieved: %@", returnedData);
         }
+
+        NSLog(@"sendPushTokenToServer:Response recieved: %ld", code);
+        if (code == OAUTH_FAIL_CODE || code == 0) {
+            NSLog(@"Authentication failed. Obtaining a new access token");
+            if([self getNewAccessToken]){
+                [self sendPushTokenToServer:udid pushToken:token];
+            }
+            NSLog(@"Error occurred %ld", code);
+        }
+
     }];
 }
 
 - (void)sendLocationToServer:(NSString *)udid latitiude:(float)lat longitude:(float)longi {
-    
     NSString *endpoint = [NSString stringWithFormat:[URLUtils getLocationPublishURL], udid];
 
     NSURL *url = [NSURL URLWithString:endpoint];
@@ -62,20 +71,27 @@
     [self addAccessToken:request];
     [self setAllowsAnyHTTPSCertificate:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        int code = [(NSHTTPURLResponse *)response statusCode];
- 
-        if (code == OAUTH_FAIL_CODE) {
+        long code = [(NSHTTPURLResponse *)response statusCode];
+        
+        NSString *returnedData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        if (returnedData != nil) {
+            NSLog(@"sendLocationUpdateToServer:Data recieved: %@", returnedData);
+            [MDMUtils setLocationUpdatedTime];
+        }
+
+        NSLog(@"sendLocationToServer:Response recieved: %ld", code);
+        if (code == OAUTH_FAIL_CODE || code == 0) {
+            NSLog(@"Authentication failed. Obtaining a new access token");
             if([self getNewAccessToken]){
                 [self sendLocationToServer:udid latitiude:lat longitude:longi];
             }
-            NSLog(@"Error occurred %i", code);
+            NSLog(@"Error occurred %ld", code);
         }
     }];
 }
 
 
 - (void)sendOperationUpdateToServer:(NSString *)deviceId operationId:(NSString *)opId status:(NSString *)state {
-    
     NSString *endpoint = [NSString stringWithFormat:[URLUtils getOperationURL], deviceId];
 
     NSURL *url = [NSURL URLWithString:endpoint];
@@ -92,15 +108,20 @@
     [self addAccessToken:request];
     [self setAllowsAnyHTTPSCertificate:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        int code = [(NSHTTPURLResponse *)response statusCode];
+        long code = [(NSHTTPURLResponse *)response statusCode];
         
-        if (code == OAUTH_FAIL_CODE) {
+        NSString *returnedData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        if (returnedData != nil) {
+            NSLog(@"sendOperationUpdateToServer:Data recieved: %@", returnedData);
+        }
+        NSLog(@"sendOperationUpdateToServer:Response recieved: %ld", code);
+        if (code == OAUTH_FAIL_CODE || code == 0) {
+            NSLog(@"Authentication failed. Obtaining a new access token");
             if([self getNewAccessToken]){
                 [self sendOperationUpdateToServer:deviceId operationId:opId status:state];
             }
-            NSLog(@"Error occurred %i", code);
+            NSLog(@"Error occurred %ld", code);
         }
-     
     }];
 }
 
@@ -119,9 +140,14 @@
     
     [self setAllowsAnyHTTPSCertificate:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        int code = [(NSHTTPURLResponse *)response statusCode];
-
+        long code = [(NSHTTPURLResponse *)response statusCode];
+        NSString *returnedData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        if (returnedData != nil) {
+            NSLog(@"sendUnenrollToServer:Data recieved: %@", returnedData);
+        }
+        NSLog(@"sendUnenrollToServer:Response recieved: %ld", code);
         if (code == OAUTH_FAIL_CODE) {
+            NSLog(@"Authentication failed. Obtaining a new access token");
             if([self getNewAccessToken]){
                 [self sendUnenrollToServer];
             }
@@ -144,8 +170,11 @@
 }
 
 - (void)addAccessToken:(NSMutableURLRequest *)request {
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    NSString *storedAccessToken = [wrapper objectForKey:(__bridge id)(kSecAttrAccount)];
+//    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
+//    NSString *storedAccessToken = [wrapper objectForKey:(__bridge id)(kSecAttrAccount)];
+
+    NSString *storedAccessToken = [MDMUtils getAccessToken];
+    
     if(storedAccessToken != nil){
         NSString *headerValue = [AUTHORIZATION_BEARER stringByAppendingString:storedAccessToken];
         [request setValue:headerValue forHTTPHeaderField:AUTHORIZATION];
@@ -154,6 +183,9 @@
 
 
 - (BOOL)getNewAccessToken {
+    
+    NSLog(@"getNewAccessToken: Obtaining a new access token");
+    
     NSString *endpoint = [URLUtils getRefreshTokenURL];
 
     NSURL *url = [NSURL URLWithString:endpoint];
@@ -161,8 +193,11 @@
     NSMutableDictionary *paramDictionary = [[NSMutableDictionary alloc] init];
     
     
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    NSString *storedRefreshToken = [wrapper objectForKey:(__bridge id)(kSecValueData)];
+//    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
+//    NSString *storedRefreshToken = [wrapper objectForKey:(__bridge id)(kSecValueData)];
+    
+    NSString *storedRefreshToken = [MDMUtils getRefreshToken];
+    
     if(storedRefreshToken != nil){
         [paramDictionary setObject:storedRefreshToken forKey:REFRESH_TOKEN];
     }
@@ -185,7 +220,8 @@
     
     if (error == nil)
     {
-        int code = [(NSHTTPURLResponse *)response statusCode];
+        long code = [(NSHTTPURLResponse *)response statusCode];
+        NSLog(@"getNewAccessToken:Response recieved: %li", code);
         if (code == HTTP_OK) {
             NSError *jsonError;
             NSString *returnedData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
@@ -195,9 +231,9 @@
                                                                    error:&jsonError];
             NSString *accessToken =(NSString*)[json objectForKey:@"access_token"];
             NSString *refreshToken =(NSString*)[json objectForKey:@"refresh_token"];
-            KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-            [wrapper setObject:accessToken forKey:(__bridge id)(kSecAttrAccount)];
-            [wrapper setObject:refreshToken forKey:(__bridge id)(kSecValueData)];
+            [MDMUtils setAccessToken:accessToken];
+            [MDMUtils setRefreshToken:refreshToken];
+            
             
             return true;
         }
@@ -207,8 +243,9 @@
 }
 
 - (void)addClientDeatils:(NSMutableURLRequest *)request {
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    NSString *storedClientDetails = [wrapper objectForKey:(__bridge id)(kSecAttrService)];
+    
+    NSString *storedClientDetails = [MDMUtils getClientCredentials];
+    
     if(storedClientDetails != nil){
         NSString *headerValue = [AUTHORIZATION_BASIC stringByAppendingString:storedClientDetails];
         [request setValue:headerValue forHTTPHeaderField:AUTHORIZATION];
@@ -239,5 +276,7 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
     return [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
 }
+
+
 
 @end

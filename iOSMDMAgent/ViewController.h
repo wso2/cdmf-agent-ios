@@ -13,8 +13,16 @@
 @interface ViewController : UIViewController <SDKProtocol, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *btnUnRegister;
+@property (strong, nonatomic) IBOutlet UIButton *btnRefresh;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *lbLocationSync;
+@property (strong, nonatomic) IBOutlet UILabel *lbDeviceName;
+@property (strong, nonatomic) IBOutlet UILabel *lbTenant;
+
 
 - (IBAction)clickOnUnRegister:(id)sender;
+- (IBAction)refresh:(id)sender;
 
 @end
 

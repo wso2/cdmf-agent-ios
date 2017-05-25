@@ -1,10 +1,7 @@
 //
 //  URLUtils.m
 //  iOSMDMAgent
-//
-//  Created by Dilshan Edirisuriya on 3/23/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
+
 
 #import "URLUtils.h"
 
@@ -38,7 +35,7 @@ NSString *const AUTHORIZATION_BASIC = @" Basic ";
 NSString *const AUTHORIZATION_BEARER = @" Bearer ";
 NSString *const AUTHORIZATION = @"Authorization";
 NSString *const REFRESH_TOKEN_URI =@"REFRESH_TOKEN_URI";
-NSString *const REFRESH_TOKEN = @"refresh_token";
+NSString *const REFRESH_TOKEN_LABEL = @"refresh_token";
 NSString *const GRANT_TYPE = @"grant_type";
 NSString *const GRANT_TYPE_VALUE = @"refresh_token";
 NSString *const FORM_ENCODED = @"application/x-www-form-urlencoded";
