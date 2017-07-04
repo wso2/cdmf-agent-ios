@@ -25,6 +25,8 @@
 		14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BD723A1A83479900D43DE5 /* LaunchScreen.xib */; };
 		14BD72481A83479900D43DE5 /* iOSMDMAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72471A83479900D43DE5 /* iOSMDMAgentTests.m */; };
 		14BD72541A834E2200D43DE5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72531A834E2200D43DE5 /* LoginViewController.m */; };
+		40D8795F1EFA47B5009A7242 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D8795E1EFA47B5009A7242 /* header.png */; };
+		40D879611EFA4FDE009A7242 /* SplashMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D879601EFA4FDE009A7242 /* SplashMain.png */; };
 		620031A71BFCB63B004559F6 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		14BD72521A834E2200D43DE5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		14BD72531A834E2200D43DE5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		40735CED1D9BC4CA00AAB802 /* iOSMDMAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSMDMAgent.entitlements; sourceTree = "<group>"; };
+		40D8795E1EFA47B5009A7242 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = ../../../../../../Downloads/header.png; sourceTree = "<group>"; };
+		40D879601EFA4FDE009A7242 /* SplashMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashMain.png; path = ../../../../../../Downloads/SplashMain.png; sourceTree = "<group>"; };
 		620031A51BFCB63B004559F6 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +169,8 @@
 		14BD722B1A83479800D43DE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40D879601EFA4FDE009A7242 /* SplashMain.png */,
+				40D8795E1EFA47B5009A7242 /* header.png */,
 				14AE5F5D1AC03509005144D3 /* Endpoints.plist */,
 				144CAA811AC2B96D006AB191 /* sound.caf */,
 				14BD72381A83479900D43DE5 /* Images.xcassets */,
@@ -256,8 +262,8 @@
 				TargetAttributes = {
 					14BD72271A83479800D43DE5 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = WG5WYLKUE5;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = KED4SHKL8S;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -301,11 +307,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D8795F1EFA47B5009A7242 /* header.png in Resources */,
 				14BD72371A83479900D43DE5 /* Main.storyboard in Resources */,
 				14AE5F5E1AC03509005144D3 /* Endpoints.plist in Resources */,
 				144CAA821AC2B96D006AB191 /* sound.caf in Resources */,
 				14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */,
 				14BD72391A83479900D43DE5 /* Images.xcassets in Resources */,
+				40D879611EFA4FDE009A7242 /* SplashMain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,15 +474,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSMDMAgent/iOSMDMAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WG5WYLKUE5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = KED4SHKL8S;
 				INFOPLIST_FILE = iOSMDMAgent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wso2.carbon.emm.ios.agent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "008bd780-edd6-4f7e-b5b4-6861209b4617";
+				PROVISIONING_PROFILE_SPECIFIER = "WSO2 EMM iOS Enterprise provision profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -485,15 +493,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSMDMAgent/iOSMDMAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WG5WYLKUE5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = KED4SHKL8S;
 				INFOPLIST_FILE = iOSMDMAgent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wso2.carbon.emm.ios.agent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "008bd780-edd6-4f7e-b5b4-6861209b4617";
+				PROVISIONING_PROFILE_SPECIFIER = "WSO2 EMM iOS Enterprise provision profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

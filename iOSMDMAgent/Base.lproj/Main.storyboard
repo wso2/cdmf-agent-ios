@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qTg-lr-Zb6">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qTg-lr-Zb6">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,28 +20,38 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-yl-pwy">
-                                <rect key="frame" x="214" y="161" width="172" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-yl-pwy">
+                                <rect key="frame" x="107" y="380.66666666666669" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.95776337389999999" green="0.48279076809999999" blue="0.1256870031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="KJM-QB-sjp"/>
-                                    <constraint firstAttribute="width" constant="172" id="akQ-xs-BjR"/>
+                                    <constraint firstAttribute="height" constant="40" id="YEf-5R-YUZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="Zx4-75-Nqh"/>
                                 </constraints>
-                                <state key="normal" title="Unregister" backgroundImage="ButtonImages">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Unregister">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="clickOnUnRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6O8-3d-43S"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="BdM-gn-vWD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="220.66666666666666"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BdM-gn-vWD" secondAttribute="height" multiplier="15:8" id="8Jp-Pl-T1F"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EFj-yl-pwy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K3f-UX-z7H"/>
-                            <constraint firstItem="EFj-yl-pwy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="PhK-CD-4xE"/>
+                            <constraint firstItem="EFj-yl-pwy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4b7-9p-6bS"/>
+                            <constraint firstAttribute="trailing" secondItem="BdM-gn-vWD" secondAttribute="trailing" id="DYC-3s-pG4"/>
+                            <constraint firstItem="BdM-gn-vWD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Hcd-dI-UFG"/>
+                            <constraint firstItem="BdM-gn-vWD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JTB-Fe-5rd"/>
+                            <constraint firstItem="EFj-yl-pwy" firstAttribute="top" secondItem="BdM-gn-vWD" secondAttribute="bottom" constant="160" id="LXJ-RA-HR4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -57,56 +68,59 @@
                         <viewControllerLayoutGuide type="bottom" id="ujk-Br-Ske"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LZD-ej-fVq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set your server address here to start registration (i.e. www.abc.com)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7v-4T-Vc8">
-                                <rect key="frame" x="20" y="69" width="560" height="70"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://iot.wso2.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBV-H8-qQF">
-                                <rect key="frame" x="25" y="164" width="550" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://iot.wso2.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBV-H8-qQF">
+                                <rect key="frame" x="40" y="321.66666666666669" width="334" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="qTg-lr-Zb6" id="kZ9-1h-CJc"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-zP-a5q">
-                                <rect key="frame" x="200" y="224" width="200" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-zP-a5q">
+                                <rect key="frame" x="107" y="391.66666666666669" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.95776337389999999" green="0.48279076809999999" blue="0.1256870031" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="61u-uq-3SE"/>
-                                    <constraint firstAttribute="height" constant="56" id="QHu-jM-Zk7"/>
+                                    <constraint firstAttribute="width" constant="200" id="j07-oC-kB0"/>
+                                    <constraint firstAttribute="height" constant="40" id="yLa-50-hmM"/>
                                 </constraints>
-                                <state key="normal" title="Start Registration" backgroundImage="ButtonImages">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Start Registration">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="clickOnRegister:" destination="qTg-lr-Zb6" eventType="touchUpInside" id="fw1-9B-T1Q"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your server address here to start registration (i.e. www.abc.com)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7v-4T-Vc8">
+                                <rect key="frame" x="40" y="261.33333333333331" width="334" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="UbY-lx-tPh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="220.66666666666666"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UbY-lx-tPh" secondAttribute="height" multiplier="182:97" id="OdC-DC-7Wl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eBV-H8-qQF" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leading" constant="25" id="6yf-mK-R4v"/>
-                            <constraint firstAttribute="trailing" secondItem="eBV-H8-qQF" secondAttribute="trailing" constant="25" id="Aty-NA-Aag"/>
-                            <constraint firstItem="u7v-4T-Vc8" firstAttribute="top" secondItem="IQn-D0-qtt" secondAttribute="bottom" constant="49" id="JzZ-g9-udi"/>
-                            <constraint firstItem="u7v-4T-Vc8" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leadingMargin" constant="4" id="L0w-Vu-J2M"/>
-                            <constraint firstItem="Y2Z-zP-a5q" firstAttribute="top" secondItem="LZD-ej-fVq" secondAttribute="top" constant="224" id="LFV-N4-gYh"/>
-                            <constraint firstAttribute="centerX" secondItem="eBV-H8-qQF" secondAttribute="centerX" id="XRB-Jw-J4B"/>
-                            <constraint firstAttribute="centerX" secondItem="u7v-4T-Vc8" secondAttribute="centerX" id="ZYY-gi-pfG"/>
-                            <constraint firstItem="eBV-H8-qQF" firstAttribute="top" secondItem="u7v-4T-Vc8" secondAttribute="bottom" constant="25" id="gOK-dM-LoF"/>
-                            <constraint firstAttribute="centerX" secondItem="eBV-H8-qQF" secondAttribute="centerX" id="rOQ-wV-2LB"/>
-                            <constraint firstAttribute="centerX" secondItem="Y2Z-zP-a5q" secondAttribute="centerX" id="sF0-nv-Ni5"/>
+                            <constraint firstItem="Y2Z-zP-a5q" firstAttribute="centerX" secondItem="LZD-ej-fVq" secondAttribute="centerX" id="BJy-0K-GhD"/>
+                            <constraint firstItem="Y2Z-zP-a5q" firstAttribute="top" secondItem="eBV-H8-qQF" secondAttribute="bottom" constant="40" id="KPv-R3-sYT"/>
+                            <constraint firstAttribute="trailing" secondItem="UbY-lx-tPh" secondAttribute="trailing" id="Kj6-Mc-UQW"/>
+                            <constraint firstItem="UbY-lx-tPh" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leading" id="NJe-fb-AR9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u7v-4T-Vc8" secondAttribute="trailing" constant="20" id="NRi-mK-Zoe"/>
+                            <constraint firstItem="eBV-H8-qQF" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leadingMargin" constant="20" id="Wr6-Wh-Frt"/>
+                            <constraint firstItem="UbY-lx-tPh" firstAttribute="top" secondItem="LZD-ej-fVq" secondAttribute="top" id="Ygx-eb-Pt5"/>
+                            <constraint firstItem="eBV-H8-qQF" firstAttribute="top" secondItem="u7v-4T-Vc8" secondAttribute="bottom" constant="40" id="cDT-Ey-lCw"/>
+                            <constraint firstItem="u7v-4T-Vc8" firstAttribute="leading" secondItem="LZD-ej-fVq" secondAttribute="leadingMargin" constant="20" id="rTt-rk-3E1"/>
+                            <constraint firstItem="u7v-4T-Vc8" firstAttribute="top" secondItem="UbY-lx-tPh" secondAttribute="bottom" constant="40" id="s4W-ml-eOV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eBV-H8-qQF" secondAttribute="trailing" constant="20" id="xqv-MW-yis"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="rOQ-wV-2LB"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="btnRegister" destination="Y2Z-zP-a5q" id="ceb-U6-saO"/>
@@ -119,6 +133,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonImages" width="200" height="82"/>
+        <image name="header.png" width="750" height="379"/>
     </resources>
 </document>
