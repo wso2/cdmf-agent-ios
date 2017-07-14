@@ -49,11 +49,8 @@ NSString *const STATUS = @"status";
 }
 
 + (NSString *)getServerURL {
-    return [[URLUtils readEndpoints] objectForKey:SERVER_URL];
-}
-
-+ (NSString *)getEnrollmentURL {
-    return [NSString stringWithFormat:@"%@", [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:SERVER_URL];
 }
 
 + (NSString *)getContextURL {
@@ -92,6 +89,10 @@ NSString *const STATUS = @"status";
 
 + (NSString *)getRefreshTokenURL{
     return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [[URLUtils readEndpoints] objectForKey:REFRESH_TOKEN_URI]];
+}
+
++ (NSString *)getEnrollmentURL {
+    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
 }
 
 @end

@@ -17,8 +17,6 @@
 
 
 @property (strong, nonatomic) IBOutlet UILabel *lbLocationSync;
-@property (strong, nonatomic) IBOutlet UILabel *lbDeviceName;
-@property (strong, nonatomic) IBOutlet UILabel *lbTenant;
 
 
 - (IBAction)clickOnUnRegister:(id)sender;

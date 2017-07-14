@@ -19,8 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.lbTenant.text = [MDMUtils getTenantDomain];
-    self.lbDeviceName.text = [MDMUtils getDeviceUDID];
     self.lbLocationSync.text = [MDMUtils getLocationUpdatedTime];
     // Do any additional setup after loading the view, typically from a nib.
 }

@@ -15,11 +15,11 @@
 	<key>LOCATION_PUBLISH_URI</key>
 	<string>/devices/location/%@</string>
 	<key>ENROLLMENT_URI</key>
-	<string>https://device.cloudstaging.wso2.com/ios-web-agent/enrollments/ios/login-agent</string>
+	<string>/ios-web-agent/enrollments/ios/login-agent</string>
 	<key>API_PORT</key>
 	<string>8243</string>
 	<key>ENROLMENT_PORT</key>
-	<string>443</string>
+	<string>9443</string>
 	<key>SERVER_URL</key>
 	<string>https://gateway.api.cloudstaging.wso2.com</string>
 </dict>
