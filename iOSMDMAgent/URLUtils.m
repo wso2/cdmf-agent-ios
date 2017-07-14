@@ -1,10 +1,7 @@
 //
 //  URLUtils.m
 //  iOSMDMAgent
-//
-//  Created by Dilshan Edirisuriya on 3/23/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
+
 
 #import "URLUtils.h"
 
@@ -52,12 +49,11 @@ NSString *const STATUS = @"status";
 }
 
 + (NSString *)getServerURL {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults objectForKey:SERVER_URL];
+    return [[URLUtils readEndpoints] objectForKey:SERVER_URL];
 }
 
 + (NSString *)getEnrollmentURL {
-    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+    return [NSString stringWithFormat:@"%@", [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
 }
 
 + (NSString *)getContextURL {

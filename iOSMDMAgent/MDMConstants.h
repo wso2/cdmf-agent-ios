@@ -2,8 +2,6 @@
 //  MDMConstants.h
 //  iOSMDMAgent
 //
-//  Created by Dilshan Edirisuriya on 2/19/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

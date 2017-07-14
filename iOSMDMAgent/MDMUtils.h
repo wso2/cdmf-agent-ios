@@ -26,6 +26,10 @@ extern NSString *const ACCESS_TOKEN;
 extern NSString *const REFRESH_TOKEN;
 extern NSString *const CLIENT_CREDENTIALS;
 
+extern NSString *const TENANT_DOMAIN;
+extern NSString *const LOCATION_UPDATED_TIME;
+
+
 + (void)saveDeviceUDID:(NSString *)udid;
 + (NSString *)getDeviceUDID;
 + (NSString *) getEnrollStatus;
@@ -34,5 +38,15 @@ extern NSString *const CLIENT_CREDENTIALS;
 + (void) setLocationOperationId: (NSString *)value;
 + (void)savePreferance:(NSString *)key value:(NSString *)val;
 + (NSString *)getPreferance:(NSString *)key;
++ (void)setAccessToken:(NSString *)accessToken;
++ (void)setRefreshToken:(NSString *)refreshToken;
++ (NSString *)getAccessToken;
++ (NSString *)getRefreshToken;
++ (void)setClientCredentials:(NSString *)clientCredentials;
++ (NSString *)getClientCredentials;
++ (void)setTenantDomain:(NSString *)tenantDomain;
++ (NSString *)getTenantDomain;
++ (void)setLocationUpdatedTime;
++ (NSString *)getLocationUpdatedTime;
 
 @end

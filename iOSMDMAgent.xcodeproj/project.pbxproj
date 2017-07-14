@@ -25,8 +25,10 @@
 		14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BD723A1A83479900D43DE5 /* LaunchScreen.xib */; };
 		14BD72481A83479900D43DE5 /* iOSMDMAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72471A83479900D43DE5 /* iOSMDMAgentTests.m */; };
 		14BD72541A834E2200D43DE5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72531A834E2200D43DE5 /* LoginViewController.m */; };
-		40D8795F1EFA47B5009A7242 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D8795E1EFA47B5009A7242 /* header.png */; };
-		40D879611EFA4FDE009A7242 /* SplashMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D879601EFA4FDE009A7242 /* SplashMain.png */; };
+		405C079E1ECB0936002AB6EE /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 405C079D1ECB0936002AB6EE /* header.png */; };
+		405C07A01ECB6520002AB6EE /* SplashMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 405C079F1ECB6520002AB6EE /* SplashMain.png */; };
+		40F3E15A1ED2AE2B00F02FFD /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F3E1591ED2AE2B00F02FFD /* refresh.png */; };
+		620031A71BFCB63B004559F6 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +72,12 @@
 		14BD72471A83479900D43DE5 /* iOSMDMAgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSMDMAgentTests.m; sourceTree = "<group>"; };
 		14BD72521A834E2200D43DE5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		14BD72531A834E2200D43DE5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		405C079D1ECB0936002AB6EE /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = ../../../../../../Downloads/header.png; sourceTree = "<group>"; };
+		405C079F1ECB6520002AB6EE /* SplashMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashMain.png; path = ../../../../../../Downloads/SplashMain.png; sourceTree = "<group>"; };
 		40735CED1D9BC4CA00AAB802 /* iOSMDMAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSMDMAgent.entitlements; sourceTree = "<group>"; };
-		40D8795E1EFA47B5009A7242 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = ../../../../../../Downloads/header.png; sourceTree = "<group>"; };
-		40D879601EFA4FDE009A7242 /* SplashMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashMain.png; path = ../../../../../../Downloads/SplashMain.png; sourceTree = "<group>"; };
+		40F3E1591ED2AE2B00F02FFD /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = ../../../../../../Desktop/refresh.png; sourceTree = "<group>"; };
+		620031A51BFCB63B004559F6 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +169,9 @@
 		14BD722B1A83479800D43DE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				40D879601EFA4FDE009A7242 /* SplashMain.png */,
-				40D8795E1EFA47B5009A7242 /* header.png */,
+				40F3E1591ED2AE2B00F02FFD /* refresh.png */,
+				405C079F1ECB6520002AB6EE /* SplashMain.png */,
+				405C079D1ECB0936002AB6EE /* header.png */,
 				14AE5F5D1AC03509005144D3 /* Endpoints.plist */,
 				144CAA811AC2B96D006AB191 /* sound.caf */,
 				14BD72381A83479900D43DE5 /* Images.xcassets */,
@@ -302,13 +308,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D8795F1EFA47B5009A7242 /* header.png in Resources */,
+				405C079E1ECB0936002AB6EE /* header.png in Resources */,
 				14BD72371A83479900D43DE5 /* Main.storyboard in Resources */,
 				14AE5F5E1AC03509005144D3 /* Endpoints.plist in Resources */,
 				144CAA821AC2B96D006AB191 /* sound.caf in Resources */,
 				14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */,
+				40F3E15A1ED2AE2B00F02FFD /* refresh.png in Resources */,
 				14BD72391A83479900D43DE5 /* Images.xcassets in Resources */,
-				40D879611EFA4FDE009A7242 /* SplashMain.png in Resources */,
+				405C07A01ECB6520002AB6EE /* SplashMain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +476,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSMDMAgent/iOSMDMAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KED4SHKL8S;
 				INFOPLIST_FILE = iOSMDMAgent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -488,7 +495,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSMDMAgent/iOSMDMAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KED4SHKL8S;
 				INFOPLIST_FILE = iOSMDMAgent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

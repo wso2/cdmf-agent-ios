@@ -36,19 +36,21 @@
 
 - (IBAction)clickOnRegister:(id)sender {
     
-    NSURL *serverURL = [NSURL URLWithString:_serverURL.text];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     
-    if (!_serverURL || [@"" isEqualToString:_serverURL.text]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:EMPTY_URL message:EMPTY_URL_MESSAGE delegate:nil cancelButtonTitle:OK_BUTTON_TEXT otherButtonTitles:nil, nil];
-        [alertView show];
-    } else if(!serverURL) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:INVALID_SERVER_URL message:INVALID_SERVER_URL_MESSAGE delegate:nil cancelButtonTitle:OK_BUTTON_TEXT otherButtonTitles:nil, nil];
-        [alertView show];
-    } else {
-        [URLUtils saveServerURL:_serverURL.text];
-        
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
-    }
+//    NSURL *serverURL = [NSURL URLWithString:_serverURL.text];
+//    
+//    if (!_serverURL || [@"" isEqualToString:_serverURL.text]) {
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:EMPTY_URL message:EMPTY_URL_MESSAGE delegate:nil cancelButtonTitle:OK_BUTTON_TEXT otherButtonTitles:nil, nil];
+//        [alertView show];
+//    } else if(!serverURL) {
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:INVALID_SERVER_URL message:INVALID_SERVER_URL_MESSAGE delegate:nil cancelButtonTitle:OK_BUTTON_TEXT otherButtonTitles:nil, nil];
+//        [alertView show];
+//    } else {
+//        [URLUtils saveServerURL:_serverURL.text];
+//        
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
+//    }
     
 }
 

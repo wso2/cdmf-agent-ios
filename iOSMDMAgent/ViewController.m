@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.lbTenant.text = [MDMUtils getTenantDomain];
+    self.lbDeviceName.text = [MDMUtils getDeviceUDID];
+    self.lbLocationSync.text = [MDMUtils getLocationUpdatedTime];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -56,6 +59,9 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:UNREGISTER_ERROR message:UNREGISTER_ERROR_MESSAGE delegate:nil cancelButtonTitle:OK_BUTTON_TEXT otherButtonTitles:nil, nil];
         [alertView show];
     });
+}
+- (IBAction)refresh:(id)sender {
+    self.lbLocationSync.text = [MDMUtils getLocationUpdatedTime];
 }
 
 @end
