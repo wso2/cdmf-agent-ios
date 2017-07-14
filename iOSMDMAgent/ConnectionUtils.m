@@ -2,14 +2,10 @@
 //  ConnectionUtils.m
 //  iOSMDMAgent
 //
-//  Created by Dilshan Edirisuriya on 3/23/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
 
 #import "ConnectionUtils.h"
 #import "URLUtils.h"
 #import "MDMUtils.h"
-#import "KeychainItemWrapper.h"
 
 //Remove this code chunk in production
 @interface NSURLRequest(Private)
@@ -146,8 +142,7 @@
 }
 
 - (void)addAccessToken:(NSMutableURLRequest *)request {
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    NSString *storedAccessToken = [wrapper objectForKey:(__bridge id)(kSecAttrAccount)];
+    NSString *storedAccessToken = [MDMUtils getPreferance:ACCESS_TOKEN];
     if(storedAccessToken != nil){
         NSString *headerValue = [AUTHORIZATION_BEARER stringByAppendingString:storedAccessToken];
         [request setValue:headerValue forHTTPHeaderField:AUTHORIZATION];
@@ -162,11 +157,9 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:HTTP_REQUEST_TIME];
     NSMutableDictionary *paramDictionary = [[NSMutableDictionary alloc] init];
     
-    
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    NSString *storedRefreshToken = [wrapper objectForKey:(__bridge id)(kSecValueData)];
+    NSString *storedRefreshToken = [MDMUtils getPreferance:REFRESH_TOKEN];
     if(storedRefreshToken != nil){
-        [paramDictionary setObject:storedRefreshToken forKey:REFRESH_TOKEN];
+        [paramDictionary setObject:storedRefreshToken forKey:REFRESH_TOKEN_LABEL];
     }
     
     [paramDictionary setObject:GRANT_TYPE_VALUE forKey:GRANT_TYPE];
@@ -197,10 +190,8 @@
                                                                    error:&jsonError];
             NSString *accessToken =(NSString*)[json objectForKey:@"access_token"];
             NSString *refreshToken =(NSString*)[json objectForKey:@"refresh_token"];
-            KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-            [wrapper setObject:accessToken forKey:(__bridge id)(kSecAttrAccount)];
-            [wrapper setObject:refreshToken forKey:(__bridge id)(kSecValueData)];
-            
+            [MDMUtils savePreferance:ACCESS_TOKEN value:accessToken];
+            [MDMUtils savePreferance:REFRESH_TOKEN value:refreshToken];
             return true;
         }
     }
@@ -209,8 +200,7 @@
 }
 
 - (void)addClientDeatils:(NSMutableURLRequest *)request {
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    NSString *storedClientDetails = [wrapper objectForKey:(__bridge id)(kSecAttrService)];
+    NSString *storedClientDetails = [MDMUtils getPreferance:CLIENT_CREDENTIALS];
     if(storedClientDetails != nil){
         NSString *headerValue = [AUTHORIZATION_BASIC stringByAppendingString:storedClientDetails];
         [request setValue:headerValue forHTTPHeaderField:AUTHORIZATION];

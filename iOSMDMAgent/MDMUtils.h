@@ -2,9 +2,6 @@
 //  MDMUtils.h
 //  iOSMDMAgent
 //
-//  Created by Dilshan Edirisuriya on 2/19/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 
@@ -25,12 +22,17 @@ extern NSString *const ENROLLED;
 extern NSString *const UNENROLLED;
 extern NSString *const OPERATION_ID;
 extern NSString *const LOCATION_OPERATION_ID;
+extern NSString *const ACCESS_TOKEN;
+extern NSString *const REFRESH_TOKEN;
+extern NSString *const CLIENT_CREDENTIALS;
 
 + (void)saveDeviceUDID:(NSString *)udid;
 + (NSString *)getDeviceUDID;
 + (NSString *) getEnrollStatus;
 + (void) setEnrollStatus: (NSString *)value;
 + (NSString *) getLocationOperationId;
-+ (void) setLocationOperationId: (NSString *)value ;
++ (void) setLocationOperationId: (NSString *)value;
++ (void)savePreferance:(NSString *)key value:(NSString *)val;
++ (NSString *)getPreferance:(NSString *)key;
 
 @end

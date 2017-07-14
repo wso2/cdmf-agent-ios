@@ -25,11 +25,25 @@ NSString *const ENROLL_STATUS = @"ENROLL_STATUS";
 NSString *const ENROLLED = @"enrolled";
 NSString *const UNENROLLED = @"unenrolled";
 NSString *const LOCATION_OPERATION_ID = @"LOCATION_OPERATION_ID";
+NSString *const ACCESS_TOKEN = @"ACCESS_TOKEN";
+NSString *const REFRESH_TOKEN = @"REFRESH_TOKEN";
+NSString *const CLIENT_CREDENTIALS = @"CLIENT_CREDENTIALS";
 
 + (void)saveDeviceUDID:(NSString *)udid {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:udid forKey:UDID];
     [userDefaults synchronize];
+}
+
++ (void)savePreferance:(NSString *)key value:(NSString *)val {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:val forKey:key];
+    [userDefaults synchronize];
+}
+
++ (NSString *)getPreferance:(NSString *)key {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:key];
 }
 
 + (NSString *)getDeviceUDID {

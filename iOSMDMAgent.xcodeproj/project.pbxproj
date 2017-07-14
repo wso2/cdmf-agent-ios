@@ -27,7 +27,6 @@
 		14BD72541A834E2200D43DE5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72531A834E2200D43DE5 /* LoginViewController.m */; };
 		40D8795F1EFA47B5009A7242 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D8795E1EFA47B5009A7242 /* header.png */; };
 		40D879611EFA4FDE009A7242 /* SplashMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D879601EFA4FDE009A7242 /* SplashMain.png */; };
-		620031A71BFCB63B004559F6 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +73,6 @@
 		40735CED1D9BC4CA00AAB802 /* iOSMDMAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSMDMAgent.entitlements; sourceTree = "<group>"; };
 		40D8795E1EFA47B5009A7242 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = ../../../../../../Downloads/header.png; sourceTree = "<group>"; };
 		40D879601EFA4FDE009A7242 /* SplashMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashMain.png; path = ../../../../../../Downloads/SplashMain.png; sourceTree = "<group>"; };
-		620031A51BFCB63B004559F6 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +100,6 @@
 		142143931A96009B006C34B6 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				620031A51BFCB63B004559F6 /* KeychainItemWrapper.h */,
-				620031A61BFCB63B004559F6 /* KeychainItemWrapper.m */,
 				142143941A9600BD006C34B6 /* MDMUtils.h */,
 				142143951A9600BD006C34B6 /* MDMUtils.m */,
 				142143971A96021B006C34B6 /* MDMConstants.h */,
@@ -263,7 +258,7 @@
 					14BD72271A83479800D43DE5 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = KED4SHKL8S;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -339,7 +334,6 @@
 				14BD72341A83479900D43DE5 /* ViewController.m in Sources */,
 				14BD72311A83479900D43DE5 /* AppDelegate.m in Sources */,
 				14BD722E1A83479900D43DE5 /* main.m in Sources */,
-				620031A71BFCB63B004559F6 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,15 +468,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSMDMAgent/iOSMDMAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = KED4SHKL8S;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSMDMAgent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wso2.carbon.emm.ios.agent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "008bd780-edd6-4f7e-b5b4-6861209b4617";
-				PROVISIONING_PROFILE_SPECIFIER = "WSO2 EMM iOS Enterprise provision profile";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -493,15 +487,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSMDMAgent/iOSMDMAgent.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: WSO2 Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = KED4SHKL8S;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOSMDMAgent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wso2.carbon.emm.ios.agent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "008bd780-edd6-4f7e-b5b4-6861209b4617";
-				PROVISIONING_PROFILE_SPECIFIER = "WSO2 EMM iOS Enterprise provision profile";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

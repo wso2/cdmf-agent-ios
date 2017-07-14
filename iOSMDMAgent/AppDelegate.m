@@ -2,13 +2,9 @@
 //  AppDelegate.m
 //  iOSMDMAgent
 //
-//  Created by Dilshan Edirisuriya on 2/5/15.
-//  Copyright (c) 2015 WSO2. All rights reserved.
-//
 
 #import "AppDelegate.h"
 #import "MDMUtils.h"
-#import "KeychainItemWrapper.h"
 #import "ConnectionUtils.h"
 
 @interface AppDelegate ()
@@ -137,14 +133,9 @@
         }
     }
     
-    KeychainItemWrapper* wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:TOKEN_KEYCHAIN accessGroup:nil];
-    [wrapper setObject:accessToken forKey:(__bridge id)(kSecAttrAccount)];
-    [wrapper setObject:refreshToken forKey:(__bridge id)(kSecValueData)];
-    [wrapper setObject:clientCredentials forKey: (__bridge id)kSecAttrService];
-    
-    NSString *storedAccessToken = [wrapper objectForKey:(__bridge id)(kSecAttrAccount)];
-    NSString *storedRefreshToken = [wrapper objectForKey:(__bridge id)(kSecValueData)];
-    NSString *clientCredentialsValue = [wrapper objectForKey:(__bridge id)(kSecAttrService)];
+    [MDMUtils savePreferance:ACCESS_TOKEN value:accessToken];
+    [MDMUtils savePreferance:REFRESH_TOKEN value:refreshToken];
+    [MDMUtils savePreferance:CLIENT_CREDENTIALS value:clientCredentials];
     
     [self registerForPushToken];
     [MDMUtils setEnrollStatus:ENROLLED];
