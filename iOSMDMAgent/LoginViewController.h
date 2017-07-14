@@ -12,8 +12,8 @@
 
 @interface LoginViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *serverURL;
 @property (weak, nonatomic) IBOutlet UIButton *btnRegister;
+@property (strong, nonatomic) IBOutlet UITextField *txtServer;
 
 - (IBAction)clickOnRegister:(id)sender;
 

@@ -20,5 +20,7 @@
 	<string>8243</string>
 	<key>ENROLMENT_PORT</key>
 	<string>9443</string>
+	<key>SERVER_URL</key>
+	<string>https://gateway.api.cloudstaging.wso2.com</string>
 </dict>
 </plist>
