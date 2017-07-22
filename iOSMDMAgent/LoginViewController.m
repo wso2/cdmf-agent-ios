@@ -16,6 +16,7 @@
 @implementation LoginViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.txtServer.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -35,9 +36,22 @@
 */
 
 - (IBAction)clickOnRegister:(id)sender {
-    
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
-    
+    [self enroll];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.txtServer) {
+        [textField resignFirstResponder];
+        NSLog(@"Pressed GO");
+        [self enroll];
+        return NO;
+    }
+    NSLog(@"YES");
+    return YES;
+}
+
+- (void)enroll {
     NSURL *serverURL = [NSURL URLWithString:self.txtServer.text];
     
     if (!self.txtServer || [@"" isEqualToString:self.txtServer.text]) {
@@ -51,14 +65,6 @@
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     }
-    
-}
-
--(BOOL)textFieldShouldReturn:(UITextField*)textField;
-{
-    [textField resignFirstResponder];
-    
-    return YES;
 }
 
 @end
