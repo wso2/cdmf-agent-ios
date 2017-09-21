@@ -25,9 +25,6 @@
 		14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BD723A1A83479900D43DE5 /* LaunchScreen.xib */; };
 		14BD72481A83479900D43DE5 /* iOSMDMAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72471A83479900D43DE5 /* iOSMDMAgentTests.m */; };
 		14BD72541A834E2200D43DE5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72531A834E2200D43DE5 /* LoginViewController.m */; };
-		4032F6F71F18A6CC00649685 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 4032F6F61F18A6CC00649685 /* reload.png */; };
-		405C079E1ECB0936002AB6EE /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 405C079D1ECB0936002AB6EE /* header.png */; };
-		405C07A01ECB6520002AB6EE /* SplashMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 405C079F1ECB6520002AB6EE /* SplashMain.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +68,6 @@
 		14BD72471A83479900D43DE5 /* iOSMDMAgentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSMDMAgentTests.m; sourceTree = "<group>"; };
 		14BD72521A834E2200D43DE5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		14BD72531A834E2200D43DE5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		4032F6F61F18A6CC00649685 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload.png; path = ../../../../../../Downloads/reload.png; sourceTree = "<group>"; };
-		405C079D1ECB0936002AB6EE /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = header.png; path = ../../../../../../Downloads/header.png; sourceTree = "<group>"; };
-		405C079F1ECB6520002AB6EE /* SplashMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashMain.png; path = ../../../../../../Downloads/SplashMain.png; sourceTree = "<group>"; };
 		40735CED1D9BC4CA00AAB802 /* iOSMDMAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSMDMAgent.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,9 +160,6 @@
 		14BD722B1A83479800D43DE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4032F6F61F18A6CC00649685 /* reload.png */,
-				405C079F1ECB6520002AB6EE /* SplashMain.png */,
-				405C079D1ECB0936002AB6EE /* header.png */,
 				14AE5F5D1AC03509005144D3 /* Endpoints.plist */,
 				144CAA811AC2B96D006AB191 /* sound.caf */,
 				14BD72381A83479900D43DE5 /* Images.xcassets */,
@@ -305,14 +296,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405C079E1ECB0936002AB6EE /* header.png in Resources */,
 				14BD72371A83479900D43DE5 /* Main.storyboard in Resources */,
 				14AE5F5E1AC03509005144D3 /* Endpoints.plist in Resources */,
 				144CAA821AC2B96D006AB191 /* sound.caf in Resources */,
-				4032F6F71F18A6CC00649685 /* reload.png in Resources */,
 				14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */,
 				14BD72391A83479900D43DE5 /* Images.xcassets in Resources */,
-				405C07A01ECB6520002AB6EE /* SplashMain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="569" height="924"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SplashMain.png" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-zd-Qe5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SplashMain" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-zd-Qe5">
                     <rect key="frame" x="0.0" y="0.0" width="569" height="924"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2017 WSO2. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
@@ -42,6 +42,6 @@
         </view>
     </objects>
     <resources>
-        <image name="SplashMain.png" width="750" height="1232"/>
+        <image name="SplashMain" width="750" height="1232"/>
     </resources>
 </document>
