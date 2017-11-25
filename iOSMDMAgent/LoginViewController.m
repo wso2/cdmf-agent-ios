@@ -18,7 +18,6 @@
     [super viewDidLoad];
     self.txtServer.delegate = self;
     // Do any additional setup after loading the view.
-
 }
 
 - (void)didReceiveMemoryWarning {
