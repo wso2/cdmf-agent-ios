@@ -41,6 +41,7 @@ NSString *const GRANT_TYPE_VALUE = @"refresh_token";
 NSString *const FORM_ENCODED = @"application/x-www-form-urlencoded";
 NSString *const OPERATION_ID_RESPOSNE = @"operationId";
 NSString *const STATUS = @"status";
+NSString *const ENROLLMENT_URL = @"ENROLLMENT_URL";
 
 
 + (NSDictionary *)readEndpoints {
@@ -61,8 +62,27 @@ NSString *const STATUS = @"status";
     return [[URLUtils readEndpoints] objectForKey:API_PORT];
 }
 
++ (NSString *)getEnrollmentURLFromPlist {
+    return [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URL];
+}
+
++ (NSString *)getServerURLFromPlist {
+    return [[URLUtils readEndpoints] objectForKey:SERVER_URL];
+}
+
 + (NSString *)getEnrolmentPort {
     return [[URLUtils readEndpoints] objectForKey:ENROLMENT_PORT];
+}
+
++ (NSString *)getSavedEnrollmentURL {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:ENROLLMENT_URL];
+}
+
++ (void)saveEnrollmentURL:(NSString *)enrollURL {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:enrollURL forKey:ENROLLMENT_URL];
+    [userDefaults synchronize];
 }
 
 + (void)saveServerURL:(NSString *)serverURL {
@@ -92,7 +112,7 @@ NSString *const STATUS = @"status";
 }
 
 + (NSString *)getEnrollmentURL {
-    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getServerURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getSavedEnrollmentURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
 }
 
 @end
