@@ -6,6 +6,8 @@
 #import "AppDelegate.h"
 #import "MDMUtils.h"
 #import "ConnectionUtils.h"
+#import "ConnectionUtils.h"
+#import "URLUtils.h"
 
 #define systemSoundID    1154
 
@@ -184,6 +186,19 @@
     } else {
         // iOS < 8 Notifications
         [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorized || status == kCLAuthorizationStatusDenied) {
+        NSLog(@"User responded to location");
+        NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
+        NSString *serverURL = [URLUtils getEnrollmentURLFromPlist];
+        if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
+            [URLUtils saveServerURL:serverURL];
+            [URLUtils saveEnrollmentURL:enrollURL];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
+        }
     }
 }
 

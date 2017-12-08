@@ -61,8 +61,14 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:INVALID_SERVER_URL message:INVALID_SERVER_URL_MESSAGE delegate:nil cancelButtonTitle:OK_BUTTON_TEXT otherButtonTitles:nil, nil];
         [alertView show];
     } else {
+        /*
+         If the user is allowed to type the server url, assuption is this is not a production environment,
+         Therefore, both Enrollment URL(manager node URL where the enrollment app is stored) and the gateway url are
+         taken as the same. Check didChangeAuthorizationStatus method in AppDeligate.m for production behaviour,
+         Where the URLs are hard coded.
+        */
         [URLUtils saveServerURL:self.txtServer.text];
-        
+        [URLUtils saveEnrollmentURL:self.txtServer.text];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     }
 }

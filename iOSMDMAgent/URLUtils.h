@@ -39,6 +39,7 @@ extern NSString *const OPERATION_URI;
 extern NSString *const OPERATION_ID_RESPOSNE;
 extern NSString *const STATUS;
 extern int OAUTH_FAIL_CODE;
+extern NSString *const ENROLLMENT_URL;
 
 + (void)saveServerURL:(NSString *)serverURL;
 + (NSString *)getServerURL;
@@ -50,6 +51,10 @@ extern int OAUTH_FAIL_CODE;
 + (NSString *)getUnenrollURL;
 + (NSString *)getRefreshTokenURL;
 + (NSString *)getOperationURL;
++ (void)saveEnrollmentURL:(NSString *)enrollURL;
++ (NSString *)getSavedEnrollmentURL;
++ (NSString *)getEnrollmentURLFromPlist;
++ (NSString *)getServerURLFromPlist;
 
 
 @end
