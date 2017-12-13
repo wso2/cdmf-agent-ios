@@ -17,6 +17,8 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSLog(@"App is starting...");
 
     _connectionUtils = [[ConnectionUtils alloc] init];
     _connectionUtils.delegate = self;
@@ -31,6 +33,18 @@
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         [self.locationManager requestAlwaysAuthorization];
+    }
+    
+    NSLog(@"Authorizing location service");
+    [self authorizeLocationService];
+    
+    NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
+    NSString *serverURL = [URLUtils getEnrollmentURLFromPlist];
+    if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
+        NSLog(@"Reading server url from plist");
+        [URLUtils saveServerURL:serverURL];
+        [URLUtils saveEnrollmentURL:enrollURL];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     }
  
     return YES;
@@ -190,15 +204,21 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorized || status == kCLAuthorizationStatusDenied) {
-        NSLog(@"User responded to location");
-        NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
-        NSString *serverURL = [URLUtils getEnrollmentURLFromPlist];
-        if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
-            [URLUtils saveServerURL:serverURL];
-            [URLUtils saveEnrollmentURL:enrollURL];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
-        }
+    if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        NSLog(@"User has changed location authorization. Requesting authorization");
+        [self authorizeLocationService];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Location Service Authorization"
+                                                            message:@"Turn on location services and let the app find device's location"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Turn on location services", nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
     }
 }
 
@@ -220,7 +240,6 @@
     self.locationManager.distanceFilter = 10; // meters
     
     [self.locationManager startUpdatingLocation];
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -258,6 +277,35 @@
 //    // to play sound
 //    AudioServicesPlaySystemSound (systemSoundID);
 
+}
+
+- (void)authorizeLocationService {
+    switch (CLLocationManager.authorizationStatus) {
+        case kCLAuthorizationStatusNotDetermined:
+            NSLog(@"Location authorization status: not determined");
+            [self.locationManager requestAlwaysAuthorization];
+            break;
+            
+        case kCLAuthorizationStatusRestricted:
+            NSLog(@"Location authorization status: restricted");
+            [self.locationManager requestAlwaysAuthorization];
+            break;
+            
+        case kCLAuthorizationStatusDenied:
+            NSLog(@"Location authorization status: denied");
+            [self.locationManager requestAlwaysAuthorization];
+            break;
+            
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            NSLog(@"Location authorization status: authorized when in use");
+            [self.locationManager requestAlwaysAuthorization];
+            break;
+            
+        case kCLAuthorizationStatusAuthorizedAlways:
+            NSLog(@"Location authorization status: authorized always");
+            // Nothing to do here
+            break;
+    }
 }
 
 @end

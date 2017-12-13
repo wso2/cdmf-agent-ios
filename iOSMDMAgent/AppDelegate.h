@@ -20,6 +20,7 @@
 @property (strong, nonatomic) AVAudioPlayer *theAudio;
 
 - (void)showLoginViewController;
+- (void)authorizeLocationService;
 
 @end
 
