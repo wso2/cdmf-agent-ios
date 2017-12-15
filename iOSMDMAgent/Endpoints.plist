@@ -15,7 +15,7 @@
 	<key>LOCATION_PUBLISH_URI</key>
 	<string>/devices/location/%@</string>
 	<key>ENROLLMENT_URI</key>
-	<string>/ios-web-agent/enrollments/ios/login-agent</string>
+	<string>/ios-web-agent/enrollments/ios/login-agent?isAgentAvailable=true</string>
 	<key>API_PORT</key>
 	<string>8243</string>
 	<key>ENROLMENT_PORT</key>
@@ -24,5 +24,7 @@
 	<string></string>
 	<key>SERVER_URL</key>
 	<string>https://gateway.api.cloudstaging.wso2.com</string>
+	<key>EFFECTIVE_POLICY_PATH</key>
+	<string>/devices/effective-policy/%@</string>
 </dict>
 </plist>

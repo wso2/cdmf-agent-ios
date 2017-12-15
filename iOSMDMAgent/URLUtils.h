@@ -40,6 +40,7 @@ extern NSString *const OPERATION_ID_RESPOSNE;
 extern NSString *const STATUS;
 extern int OAUTH_FAIL_CODE;
 extern NSString *const ENROLLMENT_URL;
+extern NSString *const EFFECTIVE_POLICY_PATH;
 
 + (void)saveServerURL:(NSString *)serverURL;
 + (NSString *)getServerURL;
@@ -55,6 +56,6 @@ extern NSString *const ENROLLMENT_URL;
 + (NSString *)getSavedEnrollmentURL;
 + (NSString *)getEnrollmentURLFromPlist;
 + (NSString *)getServerURLFromPlist;
-
++ (NSString *)getEffectivePolicyURL;
 
 @end

@@ -14,5 +14,6 @@
 - (void)sendLocationToServer:(NSString *)udid latitiude:(float)lat longitude:(float)longi;
 - (void)sendUnenrollToServer;
 - (void)sendOperationUpdateToServer:(NSString *)deviceId operationId:(NSString *)opId status:(NSString *)state;
+- (void)enforceEffectivePolicy:(NSString *)deviceId;
 
 @end

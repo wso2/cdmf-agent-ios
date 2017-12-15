@@ -42,6 +42,7 @@ NSString *const FORM_ENCODED = @"application/x-www-form-urlencoded";
 NSString *const OPERATION_ID_RESPOSNE = @"operationId";
 NSString *const STATUS = @"status";
 NSString *const ENROLLMENT_URL = @"ENROLLMENT_URL";
+NSString *const EFFECTIVE_POLICY_PATH = @"EFFECTIVE_POLICY_PATH";
 
 
 + (NSDictionary *)readEndpoints {
@@ -113,6 +114,10 @@ NSString *const ENROLLMENT_URL = @"ENROLLMENT_URL";
 
 + (NSString *)getEnrollmentURL {
     return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getSavedEnrollmentURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+}
+
++ (NSString *)getEffectivePolicyURL {
+    return [NSString stringWithFormat:@"%@:%@%@%@", [URLUtils getServerURL], [URLUtils getAPIPort], [URLUtils getContextURL], [[URLUtils readEndpoints] objectForKey:EFFECTIVE_POLICY_PATH]];
 }
 
 @end

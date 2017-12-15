@@ -168,6 +168,10 @@
     
     [self registerForPushToken];
     [MDMUtils setEnrollStatus:ENROLLED];
+    NSLog(@"handleOpenURL:Enforcing effective policy");
+    ConnectionUtils *connectionUtils = [[ConnectionUtils alloc] init];
+    connectionUtils.delegate = self;
+    [connectionUtils enforceEffectivePolicy:[MDMUtils getDeviceUDID]];
     return YES;
 }
 
