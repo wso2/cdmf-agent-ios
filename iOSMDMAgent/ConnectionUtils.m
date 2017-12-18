@@ -51,6 +51,36 @@
     }];
 }
 
+- (void)enforceEffectivePolicy:(NSString *)deviceId {
+    
+    NSString *endpoint = [NSString stringWithFormat:[URLUtils getEffectivePolicyURL], deviceId];
+    
+    NSURL *url = [NSURL URLWithString:endpoint];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:HTTP_REQUEST_TIME];
+    
+    [request setHTTPMethod:GET];
+    [self setContentType:request];
+    [self addAccessToken:request];
+    
+    [self setAllowsAnyHTTPSCertificate:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        long code = [(NSHTTPURLResponse *)response statusCode];
+        NSString *returnedData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        if (returnedData != nil) {
+            NSLog(@"enforceEffectivePolicy:Data recieved: %@", returnedData);
+        }
+        
+        NSLog(@"enforceEffectivePolicy:Response recieved: %ld", code);
+        if (code == OAUTH_FAIL_CODE || code == 0) {
+            NSLog(@"Authentication failed. Obtaining a new access token");
+            if([self getNewAccessToken]){
+                [self enforceEffectivePolicy:deviceId];
+            }
+            NSLog(@"Error occurred %ld", code);
+        }
+    }];
+}
+
 - (void)sendLocationToServer:(NSString *)udid latitiude:(float)lat longitude:(float)longi {
     NSString *endpoint = [NSString stringWithFormat:[URLUtils getLocationPublishURL], udid];
 
