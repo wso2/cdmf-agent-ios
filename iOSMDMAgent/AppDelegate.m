@@ -44,7 +44,6 @@
         NSLog(@"Reading server url from plist");
         [URLUtils saveServerURL:serverURL];
         [URLUtils saveEnrollmentURL:enrollURL];
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     }
  
     return YES;
