@@ -18,6 +18,11 @@
     [super viewDidLoad];
     self.txtServer.delegate = self;
     // Do any additional setup after loading the view.
+    NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
+    NSString *serverURL = [URLUtils getServerURLFromPlist];
+    if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
+        [self.txtServer setText:serverURL];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,8 +72,15 @@
          taken as the same. Check didChangeAuthorizationStatus method in AppDeligate.m for production behaviour,
          Where the URLs are hard coded.
         */
-        [URLUtils saveServerURL:self.txtServer.text];
-        [URLUtils saveEnrollmentURL:self.txtServer.text];
+        NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
+        NSString *serverURL = [URLUtils getServerURLFromPlist];
+        if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
+            [URLUtils saveServerURL:serverURL];
+            [URLUtils saveEnrollmentURL:enrollURL];
+        } else {
+            [URLUtils saveServerURL:self.txtServer.text];
+            [URLUtils saveEnrollmentURL:self.txtServer.text];
+        }
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     }
 }

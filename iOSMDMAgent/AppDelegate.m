@@ -39,12 +39,11 @@
     [self authorizeLocationService];
     
     NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
-    NSString *serverURL = [URLUtils getEnrollmentURLFromPlist];
+    NSString *serverURL = [URLUtils getServerURLFromPlist];
     if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
         NSLog(@"Reading server url from plist");
         [URLUtils saveServerURL:serverURL];
         [URLUtils saveEnrollmentURL:enrollURL];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getEnrollmentURL]]];
     }
  
     return YES;
