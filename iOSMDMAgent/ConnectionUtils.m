@@ -154,7 +154,7 @@
 }
 
 - (void)sendUnenrollToServer {
-    //[self getNewAccessToken];
+    [self getNewAccessToken];
     NSURL *url = [NSURL URLWithString:[URLUtils getUnenrollURL]];
 
     NSString *deviceId = [MDMUtils getDeviceUDID];
