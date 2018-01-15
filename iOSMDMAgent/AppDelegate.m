@@ -138,8 +138,8 @@
     NSString *refreshToken;
     NSString *clientCredentials;
     NSString *tenantDomain;
-    NSString *udid = [[url host] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [MDMUtils saveDeviceUDID:udid];
+    NSString *isRefreshComplete;
+
     NSArray *queryParams = [[url query] componentsSeparatedByString:@"&"];
     for (int i=0; i< [queryParams count]; i++){
         NSArray *keyValue = [queryParams[i] componentsSeparatedByString:@"="];
@@ -157,6 +157,9 @@
         else if ([key isEqualToString:@"tenantDomain"]) {
             tenantDomain = value;
         }
+        else if ([key isEqualToString:@"isRefreshComplete"]) {
+            isRefreshComplete = value;
+        }
     }
     
 
@@ -164,13 +167,17 @@
     [MDMUtils savePreferance:REFRESH_TOKEN value:refreshToken];
     [MDMUtils savePreferance:CLIENT_CREDENTIALS value:clientCredentials];
 
-    
-    [self registerForPushToken];
-    [MDMUtils setEnrollStatus:ENROLLED];
-    NSLog(@"handleOpenURL:Enforcing effective policy");
-    ConnectionUtils *connectionUtils = [[ConnectionUtils alloc] init];
-    connectionUtils.delegate = self;
-    [connectionUtils enforceEffectivePolicy:[MDMUtils getDeviceUDID]];
+    if (!isRefreshComplete) {
+        NSLog(@"New enrollment");
+        NSString *udid = [[url host] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [MDMUtils saveDeviceUDID:udid];
+        [self registerForPushToken];
+        [MDMUtils setEnrollStatus:ENROLLED];
+        NSLog(@"handleOpenURL:Enforcing effective policy");
+        ConnectionUtils *connectionUtils = [[ConnectionUtils alloc] init];
+        connectionUtils.delegate = self;
+        [connectionUtils enforceEffectivePolicy:[MDMUtils getDeviceUDID]];
+    }
     return YES;
 }
 
