@@ -11,6 +11,7 @@
 extern float const HTTP_REQUEST_TIME;
 extern int HTTP_OK;
 extern int HTTP_CREATED;
+extern int HTTP_BAD_REQUEST;
 extern NSString *const ENDPOINT_FILE_NAME;
 extern NSString *const EXTENSION;
 extern NSString *const TOKEN_PUBLISH_URI;
@@ -57,5 +58,6 @@ extern NSString *const EFFECTIVE_POLICY_PATH;
 + (NSString *)getEnrollmentURLFromPlist;
 + (NSString *)getServerURLFromPlist;
 + (NSString *)getEffectivePolicyURL;
++ (NSString *)getTokenRefreshURL;
 
 @end

@@ -26,5 +26,7 @@
 	<string>https://gateway.api.cloudstaging.wso2.com</string>
 	<key>EFFECTIVE_POLICY_PATH</key>
 	<string>/devices/effective-policy/%@</string>
+	<key>TOKEN_REFRESH_URI</key>
+	<string>/ios-web-agent/enrollments/ios/login-agent?isRefresh=true</string>
 </dict>
 </plist>

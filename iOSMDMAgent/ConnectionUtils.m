@@ -6,6 +6,7 @@
 #import "ConnectionUtils.h"
 #import "URLUtils.h"
 #import "MDMUtils.h"
+#import "AppDelegate.h"
 
 //Remove this code chunk in production
 @interface NSURLRequest(Private)
@@ -239,10 +240,10 @@
     NSData * data = [NSURLConnection sendSynchronousRequest:request
                                           returningResponse:&response
                                                       error:&error];
+    long code = [(NSHTTPURLResponse *)response statusCode];
     
     if (error == nil)
     {
-        long code = [(NSHTTPURLResponse *)response statusCode];
         NSLog(@"getNewAccessToken:Response recieved: %li", code);
         if (code == HTTP_OK) {
             NSError *jsonError;
@@ -259,6 +260,10 @@
 
             return true;
         }
+    }
+    if (code == HTTP_BAD_REQUEST) {
+        NSLog(@"Refresh token expired.");
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[URLUtils getTokenRefreshURL]]];
     }
     NSLog(@"Error while getting refresh token.");
     return false;

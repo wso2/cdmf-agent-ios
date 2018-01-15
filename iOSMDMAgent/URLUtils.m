@@ -11,6 +11,7 @@ float const HTTP_REQUEST_TIME = 60.0f;
 int HTTP_OK = 200;
 int HTTP_CREATED = 201;
 int OAUTH_FAIL_CODE = 401;
+int HTTP_BAD_REQUEST = 400;
 NSString *const ENDPOINT_FILE_NAME = @"Endpoints";
 NSString *const EXTENSION = @"plist";
 NSString *const TOKEN_PUBLISH_URI = @"TOKEN_PUBLISH_URI";
@@ -43,6 +44,7 @@ NSString *const OPERATION_ID_RESPOSNE = @"operationId";
 NSString *const STATUS = @"status";
 NSString *const ENROLLMENT_URL = @"ENROLLMENT_URL";
 NSString *const EFFECTIVE_POLICY_PATH = @"EFFECTIVE_POLICY_PATH";
+NSString *const TOKEN_REFRESH_URI = @"TOKEN_REFRESH_URI";
 
 
 + (NSDictionary *)readEndpoints {
@@ -114,6 +116,10 @@ NSString *const EFFECTIVE_POLICY_PATH = @"EFFECTIVE_POLICY_PATH";
 
 + (NSString *)getEnrollmentURL {
     return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getSavedEnrollmentURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:ENROLLMENT_URI]];
+}
+
++ (NSString *)getTokenRefreshURL {
+    return [NSString stringWithFormat:@"%@:%@%@", [URLUtils getSavedEnrollmentURL], [URLUtils getEnrolmentPort], [[URLUtils readEndpoints] objectForKey:TOKEN_REFRESH_URI]];
 }
 
 + (NSString *)getEffectivePolicyURL {
