@@ -8,6 +8,7 @@
 #import "ConnectionUtils.h"
 #import "ConnectionUtils.h"
 #import "URLUtils.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 #define systemSoundID    1154
 
@@ -276,16 +277,29 @@
     NSString *soundPath =[[NSBundle mainBundle] pathForResource:SOUND_FILE_NAME ofType:SOUND_FILE_EXTENSION];
     NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
     
+    /**
+     * iOS does not natively provide a way to update volume of a devices without users consent.
+     * Since MPMusicPlayerController.volume is depricated, we have to use the following
+     * work around, where we create a volume slider and adjust the volume.
+     */
+    MPVolumeView* mpVolumeView = [[MPVolumeView alloc] init];
+    UISlider* volumeSlider = nil;
+    for (UIView *view in [mpVolumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            volumeSlider = (UISlider*)view;
+            break;
+        }
+    }
+    [volumeSlider setValue:1.0f animated:YES];
+    [volumeSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+
     NSError *error = nil;
     self.theAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback
+                                     withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
     [[AVAudioSession sharedInstance] setActive: YES error: nil];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self.theAudio play];
-//    // declared system sound here
-//    
-//    // to play sound
-//    AudioServicesPlaySystemSound (systemSoundID);
 
 }
 
