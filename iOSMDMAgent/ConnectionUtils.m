@@ -23,7 +23,7 @@
 
     NSURL *url = [NSURL URLWithString:endpoint];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:HTTP_REQUEST_TIME];
-    
+    NSLog(@"sendPushTokenToServer:url: %@", url);
     NSMutableDictionary *paramDictionary = [[NSMutableDictionary alloc] init];
     [paramDictionary setValue:token forKey:TOKEN];
 
@@ -55,6 +55,7 @@
 - (void)enforceEffectivePolicy:(NSString *)deviceId {
     
     NSString *endpoint = [NSString stringWithFormat:[URLUtils getEffectivePolicyURL], deviceId];
+    NSLog(@"enforceEffectivePolicy:endpoint: %@", endpoint);
     
     NSURL *url = [NSURL URLWithString:endpoint];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:HTTP_REQUEST_TIME];
