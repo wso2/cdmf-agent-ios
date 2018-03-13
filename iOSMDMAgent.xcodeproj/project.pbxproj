@@ -25,6 +25,7 @@
 		14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BD723A1A83479900D43DE5 /* LaunchScreen.xib */; };
 		14BD72481A83479900D43DE5 /* iOSMDMAgentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72471A83479900D43DE5 /* iOSMDMAgentTests.m */; };
 		14BD72541A834E2200D43DE5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD72531A834E2200D43DE5 /* LoginViewController.m */; };
+		E80C7E3C2040137100215441 /* ManagedAppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E80C7E3B2040137100215441 /* ManagedAppConfig.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		14BD72521A834E2200D43DE5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		14BD72531A834E2200D43DE5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		40735CED1D9BC4CA00AAB802 /* iOSMDMAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSMDMAgent.entitlements; sourceTree = "<group>"; };
+		E80C7E3B2040137100215441 /* ManagedAppConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ManagedAppConfig.plist; path = ManagedAppConfig.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		14BD722A1A83479800D43DE5 /* iOSMDMAgent */ = {
 			isa = PBXGroup;
 			children = (
+				E80C7E3B2040137100215441 /* ManagedAppConfig.plist */,
 				40735CED1D9BC4CA00AAB802 /* iOSMDMAgent.entitlements */,
 				142143931A96009B006C34B6 /* SDK */,
 				14BD722F1A83479900D43DE5 /* AppDelegate.h */,
@@ -298,6 +301,7 @@
 			files = (
 				14BD72371A83479900D43DE5 /* Main.storyboard in Resources */,
 				14AE5F5E1AC03509005144D3 /* Endpoints.plist in Resources */,
+				E80C7E3C2040137100215441 /* ManagedAppConfig.plist in Resources */,
 				144CAA821AC2B96D006AB191 /* sound.caf in Resources */,
 				14BD723C1A83479900D43DE5 /* LaunchScreen.xib in Resources */,
 				14BD72391A83479900D43DE5 /* Images.xcassets in Resources */,

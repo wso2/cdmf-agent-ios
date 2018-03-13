@@ -46,6 +46,46 @@
         [URLUtils saveServerURL:serverURL];
         [URLUtils saveEnrollmentURL:enrollURL];
     }
+
+    // Remote configs for the App are pushed by the EMM server and are written to a config space
+    // with the key com.apple.configuration.managed.
+    static NSString const *managedConfigurations = @"com.apple.configuration.managed";
+    NSDictionary *serverConfig = [[NSUserDefaults standardUserDefaults] dictionaryForKey:managedConfigurations];
+    Boolean depEnabled = [[serverConfig objectForKey:@"depEnabled"] boolValue];
+    if (depEnabled && ![[MDMUtils getEnrollStatus] isEqualToString:ENROLLED]) {
+        NSLog(@"DEP enabled device.");
+        NSString *accessToken = serverConfig[@"accessToken"];
+        NSString *refreshToken = serverConfig[@"refreshToken"];
+        NSString *clientId = serverConfig[@"clientId"];
+        NSString *clientSecret = serverConfig[@"clientSecret"];
+        NSString *remoteEnrollmentURL = serverConfig[@"enrollmentURL"];
+        NSString *remoteServerURL = serverConfig[@"serverURL"];
+        NSString *UDID = serverConfig[@"UDID"];
+        NSString *joinCredentials = [NSString stringWithFormat:@"%@:%@", clientId, clientSecret];
+        NSData *credentialsData = [joinCredentials dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *base64EncodedClientCredentials = [credentialsData base64EncodedStringWithOptions:0];
+        [MDMUtils savePreferance:CLIENT_CREDENTIALS value:base64EncodedClientCredentials];
+        [MDMUtils savePreferance:ACCESS_TOKEN value:accessToken];
+        [MDMUtils savePreferance:REFRESH_TOKEN value:refreshToken];
+        NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
+        [MDMUtils saveDeviceUDID:UDID];
+        NSString *serverURL = [URLUtils getServerURLFromPlist];
+        if(enrollURL && ![@"" isEqualToString:enrollURL] && serverURL && ![@"" isEqualToString:serverURL]) {
+            NSLog(@"Agent contains embedded values.");
+            [URLUtils saveServerURL:serverURL];
+            [URLUtils saveEnrollmentURL:enrollURL];
+        }else {
+            NSLog(@"Agent is using remote configs.");
+            NSString *remoteServerURLHTTPS = [NSString stringWithFormat:@"https://%@", remoteServerURL];
+            NSString *remoteEnrollmentURLHTTPS = [NSString stringWithFormat:@"https://%@", remoteEnrollmentURL];
+            [URLUtils saveServerURL:remoteServerURLHTTPS];
+            [URLUtils saveEnrollmentURL:remoteEnrollmentURLHTTPS];
+        }
+        NSLog(@"DEP config initiated.");
+        [self registerForPushToken];
+        [MDMUtils setEnrollStatus:ENROLLED];
+        [self showLoginViewController];
+    }
  
     return YES;
 }
