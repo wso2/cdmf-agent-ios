@@ -19,6 +19,8 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) AVAudioPlayer *theAudio;
 
+extern NSInteger const LOCATION_OFF_CODE;
+
 - (void)showLoginViewController;
 - (void)authorizeLocationService;
 

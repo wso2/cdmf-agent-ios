@@ -11,11 +11,14 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 #define systemSoundID    1154
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface AppDelegate ()
 @end
 
 @implementation AppDelegate
+
+NSInteger const LOCATION_OFF_CODE = 1000;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -31,13 +34,20 @@
     // Set a movement threshold for new events.
     self.locationManager.distanceFilter = 10; // meters
     
-    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
-    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-        [self.locationManager requestAlwaysAuthorization];
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSString *message = @"Turn on location services and let the app find device's location when necessery."
+                                "Go to Settings->Privacy->Location and enable.";
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Turn On Location Services"
+                                                  message:message delegate:self cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+        alertView.tag = LOCATION_OFF_CODE;
+        [alertView show];
+    } else {
+        // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self authorizeLocationService];
+        }
     }
-    
-    NSLog(@"Authorizing location service");
-    [self authorizeLocationService];
     
     NSString *enrollURL = [URLUtils getEnrollmentURLFromPlist];
     NSString *serverURL = [URLUtils getServerURLFromPlist];
@@ -255,21 +265,24 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        NSLog(@"User has changed location authorization. Requesting authorization");
-        [self authorizeLocationService];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Location Service Authorization"
-                                                            message:@"Turn on location services and let the app find device's location"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Turn on location services", nil];
-        [alertView show];
+    NSLog(@"didChangeAuthorizationStatus");
+    if ([CLLocationManager locationServicesEnabled]) {
+        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self authorizeLocationService];
+        }
     }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if(buttonIndex == 1) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    if(alertView.tag && LOCATION_OFF_CODE == alertView.tag) {
+        NSLog(@"Opening location settings");
+        NSString* url = SYSTEM_VERSION_LESS_THAN(@"10.0") ?
+            @"prefs:root=LOCATION_SERVICES" : @"App-Prefs:root=Privacy&path=LOCATION";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
+    } else {
+        if(buttonIndex == 1) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        }
     }
 }
 
