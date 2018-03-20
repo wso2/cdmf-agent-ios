@@ -38,9 +38,7 @@ NSInteger const LOCATION_OFF_CODE = 1000;
         NSString *message = @"Turn on location services and let the app find device's location when necessery."
                                 "Go to Settings->Privacy->Location and enable.";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Turn On Location Services"
-                                                  message:message
-                                                  delegate:self
-                                                  cancelButtonTitle:@"Ok"
+                                                  message:message delegate:self cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
         alertView.tag = LOCATION_OFF_CODE;
         [alertView show];
@@ -278,7 +276,8 @@ NSInteger const LOCATION_OFF_CODE = 1000;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(alertView.tag && LOCATION_OFF_CODE == alertView.tag) {
         NSLog(@"Opening location settings");
-        NSString* url = SYSTEM_VERSION_LESS_THAN(@"10.0") ? @"prefs:root=LOCATION_SERVICES" : @"App-Prefs:root=Privacy&path=LOCATION";
+        NSString* url = SYSTEM_VERSION_LESS_THAN(@"10.0") ?
+            @"prefs:root=LOCATION_SERVICES" : @"App-Prefs:root=Privacy&path=LOCATION";
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
     } else {
         if(buttonIndex == 1) {
