@@ -241,7 +241,6 @@
     return _locationManager;
 }
 
-
 - (void)initLocation {
     NSLog(@"Initializing location manager");
     [self.locationManager startUpdatingLocation];
