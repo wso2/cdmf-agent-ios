@@ -12,6 +12,9 @@
 #define systemSoundID    1154
 
 @interface AppDelegate ()
+
+@property (nonatomic, copy) void (^fetchCompletionHandler)(UIBackgroundFetchResult result);
+
 @end
 
 @implementation AppDelegate
@@ -22,13 +25,6 @@
 
     _connectionUtils = [[ConnectionUtils alloc] init];
     _connectionUtils.delegate = self;
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-    
-    // Set a movement threshold for new events.
-    self.locationManager.distanceFilter = 10; // meters
     
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
@@ -76,6 +72,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
     
+    self.fetchCompletionHandler = completionHandler;
     NSDictionary *apsDictionary = [userInfo objectForKey:APS];
     NSDictionary *extraDictionary = [userInfo objectForKey:EXTRA];
     NSString *udid = [MDMUtils getDeviceUDID];
@@ -97,8 +94,9 @@
                 [connectionUtils sendOperationUpdateToServer:udid operationId:operationId status:@"COMPLETED"];
                 
             } else if([@"DEVICE_LOCATION" isEqualToString:operation]) {
-                [self initLocation];
                 [MDMUtils setLocationOperationId:operationId];
+                NSLog(@"Location commmand, Time Remaining: %f", [[UIApplication sharedApplication] backgroundTimeRemaining]);
+                [self initLocation];
             }
         }
     }
@@ -224,43 +222,55 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
     }
 }
+-(CLLocationManager *)locationManager {
+    if(_locationManager) {
+        return _locationManager;
+    }
+    
+    CLLocationManager *manager = [[CLLocationManager alloc] init];
+    _locationManager = manager;
+    
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    _locationManager.pausesLocationUpdatesAutomatically = NO;
+    _locationManager.allowsBackgroundLocationUpdates = YES;
+    _locationManager.distanceFilter = kCLDistanceFilterNone;// Any movement change
+    if (@available(iOS 11.0, *)) {
+        _locationManager.showsBackgroundLocationIndicator = NO; //Hiding the location Update screen from user
+    }
+    return _locationManager;
+}
+
 
 - (void)initLocation {
     NSLog(@"Initializing location manager");
-//    __block UIBackgroundTaskIdentifier bgTask =0;
-//    UIApplication  *application = [UIApplication sharedApplication];
-//    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
-//        [self.locationManager startUpdatingLocation];
-//    }];
-    if (nil == self.locationManager) {
-        self.locationManager = [[CLLocationManager alloc] init];
-    }
-    
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-    
-    // Set a movement threshold for new events.
-    self.locationManager.distanceFilter = 10; // meters
-    
     [self.locationManager startUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"Calling didFailWithError %@", [error localizedDescription]);
+    if (self.fetchCompletionHandler) {
+        self.fetchCompletionHandler(UIBackgroundFetchResultFailed);
+        self.fetchCompletionHandler = nil;
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
+    [self.locationManager stopUpdatingLocation];
     NSLog(@"Sending location updates to the server");
     NSString *udid = [MDMUtils getDeviceUDID];
     CLLocation *location = [locations lastObject];
     
     if (location && udid) {
         [_connectionUtils sendLocationToServer:udid latitiude:location.coordinate.latitude longitude:location.coordinate.longitude];
-    }    
-    [self.locationManager stopUpdatingLocation];
-    
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.fetchCompletionHandler) {
+            self.fetchCompletionHandler(UIBackgroundFetchResultNewData);
+            self.fetchCompletionHandler = nil;
+        }
+    });
 }
 
 - (void)triggerAlert {
