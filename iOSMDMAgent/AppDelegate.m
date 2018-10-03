@@ -45,8 +45,6 @@ NSInteger const LOCATION_OFF_CODE = 1000;
         [URLUtils saveServerURL:serverURL];
         [URLUtils saveEnrollmentURL:enrollURL];
     }
-    return YES;
-}
 
     // Remote configs for the App are pushed by the EMM server and are written to a config space
     // with the key com.apple.configuration.managed.
